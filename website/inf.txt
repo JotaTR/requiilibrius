@@ -1,0 +1,12 @@
+Create tables and insert data:
+\website\Admin\php\scripts\hardRestoreDB.php
+
+localhost
+port; 3306
+db name: requilib_website
+
+user: requilib_admin
+pass: RequilibriusAdmin2016
+
+user: requilib_client
+pass: Requilibrius1
