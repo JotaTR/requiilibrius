@@ -1,0 +1,299 @@
+#header-image{
+		padding-top:500px;
+}
+.image-big{
+	padding-bottom:40px;
+}
+
+
+.page-collumn{
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.image-person{
+	margin-left:15%;
+	margin-right:15%;
+	width:70%;
+}
+
+ul{
+	text-align:left;
+	padding-left:80px;
+}
+
+
+.text{
+	 font-size: 42px;
+	letter-spacing:1px;
+   /** text-indent: 3em;**/
+}
+
+.text-centered{
+	 font-size: 42px;
+	letter-spacing:1px;
+   /** text-indent: 3em;**/
+}
+
+.section{
+	margin-top:35px;
+}
+
+
+.titulo{
+	font-size: 100px;
+	letter-spacing:5px;
+}
+
+
+.subtitulo{
+	font-size: 80px;
+	letter-spacing:3px;
+	padding-top:60px;
+}
+
+.titulo-home{
+	font-size: 40px;
+	padding-top:40px;
+    margin-bottom:30px;
+}
+
+.titulo-servicos{
+	font-size: 60px;
+	padding-top:40px;
+    margin-bottom:30px;
+}
+
+.box-servico{
+	height:300px;
+}
+
+
+.box-servico-hover{
+   height: 400px;
+}
+
+.box-servico-nothover{
+   height: 400px;
+}
+
+.servico-video-hover{
+	overflow:hidden;
+	height: 360px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.servico-video-nohover{
+	overflow:hidden;
+	height: 0px;
+}
+
+.tecnicas{
+	font-size: 48px;
+}
+
+.tecnica-detalhe{
+    font-size:38px;
+	line-height: 40px;
+}
+
+.titulo-destaque{
+	font-size: 48px;
+}
+
+.resumo-destaque{
+	font-size: 38px;
+}
+
+.resumo-conteudo{
+	font-size: 38px;
+}
+
+.referencia{
+    font-size: 44px;
+}
+.titulo-conteudo{
+	font-size: 50px;
+}
+.titulo-conteudo-selected{
+    font-size: 50px;
+}
+
+
+.sabermais-conteudo{
+    float: right;
+    height: 80px;
+    padding-bottom: 10px;
+}
+
+.icon-contacts{
+    height:60px;
+} 
+
+.mensagem-contacto{
+	font-size: 100px;
+}
+
+.text-contacts-small{
+     font-size: 32px;
+   /** text-indent: 3em;**/
+}
+
+.text-contacts{
+     font-size: 44px;
+   /** text-indent: 3em;**/
+}
+
+form label{
+    font-size:52px;
+	letter-spacing:3px;
+}
+
+.form-control{
+	height: 120px;
+	font-size: 48px;
+	letter-spacing:2px;
+}
+
+
+.close{ 
+	margin-right:10px;
+	margin-top:10px;
+}
+
+.image-close{ 
+    height:200px; 
+	width:200px; 
+}
+ 
+.itemcv-nome{
+	font-size:66px;
+	letter-spacing:1px;
+}
+
+.itemcv-basico{
+	font-size:40px;
+	letter-spacing:1px;
+}
+
+.cv-field{
+    padding-bottom:20px;
+	letter-spacing: 3px;
+}
+
+.cv-content{
+	
+}
+
+.itemcv-photo{
+	padding-bottom:50px;
+}
+
+.arrow-container {
+	width: 60px;
+    height: 160px;
+}
+
+
+
+/*footer*/
+.footer{
+	 font-size: 36px;
+}
+	
+.standard-h4title{
+	font-size: 44px;
+}
+
+.footer li{
+    line-height: 50px;
+}
+
+.line3{
+    border-bottom: 3px solid rgba(247,143,30,1);
+    display: block;
+    margin: 0px 20px 60px;
+    padding-bottom: 10x;
+}
+
+
+#footer-container{
+    padding-top: 20px;
+}
+
+
+/*Navbar*/
+.main {
+	padding-top: 380px;
+}
+
+.navbar{
+		margin-bottom: -140px;
+}
+
+.navbar-default .navbar-brand{
+    font-size:70px;
+    padding-top:40px;
+}
+
+.navbar-default .navbar-brand:hover, 
+.navbar-default .navbar-brand:focus {
+    font-size:70px;
+    padding-top:100px;
+}
+
+.navbar-toggle {
+    margin-top:40px;
+}
+
+.r-navabar{
+
+}
+
+.navbar-default .navbar-nav > li > a{
+    font-size:40px;
+    height: 140px;
+    line-height: 140px; /* <-- this is what you must define */
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover{
+    font-size:42px;
+    color:white;
+    line-height: 140px; /* <-- this is what you must define */
+}
+
+.navbar-default .navbar-nav{
+    height: 280px;
+	margin-top:40px;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover{
+     height: 140px;
+}
+
+nav .container {
+    height: 140px;
+
+}
+
+nav ul li:hover > ul{
+    width: 500px;
+}
+
+nav ul li:hover > ul a{
+    width: 500px;
+}
+
+nav ul li:hover > ul a{
+	font-size:38px;
+}
+
+
+.btn{
+    font-size: 40px;
+	margin:40px;
+}

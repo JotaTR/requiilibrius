@@ -1,0 +1,139 @@
+ <link rel="stylesheet" href="css/contactos.css">
+
+
+<div>
+    <table style="width:100%">
+        <tr>
+             <td>
+                <div class="titulo page-collumn">
+                    Contactos
+                </div>
+            </td>
+        </tr> 
+        <tr>
+            <td>
+                <div class="row page-collumn">
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="margin-bottom:40px">
+                        <table>
+                                <tr style="margin-top:0px">
+                                    <td >
+                                    <img style="margin: 10px" class="icon-contacts" src="./img/icons/location-icon.png" />
+                                    </td>
+                                    <td class="text-contacts">
+                                    Avenida D. João I, nº8
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td class="text-contacts-small">
+										Oeiras e S. Julião da Barra
+                                    </td>
+                                </tr>
+                                <tr style="margin-top:2px;">
+                                    <td>
+                                    <img style="margin: 10px" class="icon-contacts" src="./img/icons/clock-icon.png" />
+                                    </td>
+                                    <td class="text-contacts">
+                                    2º a 6º das 9h às 21h
+                                    </td>
+                                </tr>
+                                <tr style="margin-top:10px;">
+                                    <td>
+                                        <img style="margin: 10px" class="icon-contacts" src="./img/icons/mail-icon.png" />
+                                    </td>
+                                    <td class="text-contacts">
+                                        ft.requilibrius@gmail.com
+                                    </td>
+                                </tr>
+                                <tr style="margin-top:10px;">
+                                    <td>
+                                        <img style="margin: 10px" class="icon-contacts" src="./img/icons/phone-icon.png" />
+                                    </td>
+                                    <td class="text-contacts">
+                                        (+351) 21 442 16 17
+                                    </td>
+                                </tr>
+                                <tr style="margin-top:10px;">
+                                    <td>
+                                        <img style="margin: 10px" class="icon-contacts" src="./img/icons/phone-icon.png" />
+                                    </td>
+                                    <td class="text-contacts">
+                                        (+351) 91 777 65 56
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                            <ui-gmap-marker coords="marker.coord" idKey="1" >
+                            </ui-gmap-marker>
+                        </ui-gmap-google-map>
+                    </div>
+                
+                </div> 
+                <div class="row page-collumn" data-ng-controller="FormController">
+                    <div class="col-md-4 col-sm-12  col-xs-12">
+                        <div class="subtitulo mensagem-contacto">Quer ser contactado ?</div>
+                    </div>
+                    <div class="col-md-8 col-sm-12  col-xs-12">
+                        <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+                        <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+                        <form name="helpForm" novalidate role="form">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12  col-xs-12">
+                                      <div class="form-group row">
+                                        <label for="name">Nome</label>
+                                        <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Campo Obrigatório!</span>
+                                        <input type="text" name="name" data-ng-model="message.nome" class="form-control input" required />
+                                      </div>
+                                    <div class="form-group row">
+                                            <label for="name">Apelido</label>
+                                            <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Campo Obrigatório!</span>
+                                            <input type="text" name="apelido" data-ng-model="message.apelido" class="form-control input" required />
+                                      </div>
+                                      <div class="form-group row">
+                                        <label for="email">E-mail</label>
+                                        <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Campo Obrigatório!</span>
+                                        <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Mail Inválido!</span>
+                                        <input type="email" name="email" data-ng-model="message.email" class="form-control input" required />  
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 col-sm-12  col-xs-12">
+                                    <div class="form-group row">
+                                        <label for="telefone">Telefone</label>
+                                        <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Campo Obrigatório!</span>
+                                        <input type="text" name="telefone" data-ng-model="message.telefone" class="form-control input" required />  
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="comments">Mensagem</label>
+                                        <textarea name="comments" data-ng-model="message.descricao" class="form-control descricao-form"></textarea>
+                                    </div>
+                                </div>  
+                                <div class="col-md-12 col-sm-12  col-xs-12">
+                                        <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Enviar Mensagem</button>
+                                </div>
+                                <div ng-if="sending_flag==true" class="col-md-12 col-sm-12 col-xs-12 text">
+                                    A enviar mensagem...
+                                </div>
+                                <div ng-if="ok_flag==true" class="col-md-12 col-sm-12 col-xs-12 ok-message text">
+                                    Mensagem enviada com <strong>sucesso!</strong>
+                                </div>
+                                <div ng-if="error_flag==true" class="col-md-12 col-sm-12 col-xs-12 error-message text">
+                                    Pedimo desculpa mas ocurreu um <strong>erro</strong> a enviar a mensagem! 
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <div class="page-collumn">
+                </div>
+            </td>
+        </tr> 
+    </table>
+<div>

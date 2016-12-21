@@ -1,0 +1,75 @@
+ <link rel="stylesheet" href="css/testemunhos.css">
+
+<div>
+    <table style="width:100%;table-layout: fixed;">
+        <tr >
+            <td>
+                <div class="titulo">
+                    Testemunhos
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="page-collumn">
+                <div  ng-controller="PhotoSliderController" class="page-collumn">
+                    <div class="container slider" ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()" ng-hide="!isCurrentSlideIndex($index)">
+                        <div class = "col-md-9 col-xs-9">
+                            <blockquote class="three-col"> {{ slide.conteudo }} <cite> {{ slide.nome }} </cite> </blockquote>
+                        </div>
+                        <div class="col-md-3 col-xs-3" >
+                            <img ng-src="{{slide.foto}}" class="testemunhos-foto-grande" style="padding:0 auto"> <a class="arrow prev" ng-click="nextSlide()"></a> <a class="arrow next" ng-click="prevSlide()"></a> 
+                        </div>
+                            <nav class="nav-photo-slider">
+                            <div class="wrapper">
+                            <div class="dots">
+                            <div class="dot" ng-repeat="slide in slides"> <a ng-src="{{slide.foto}}" ng-class="{'active':isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a> </div>
+                            </div>
+                            </div>
+                            </nav>
+                    </div>
+                </div>
+            </td>
+        </tr>
+         <tr>
+            <td class="page-collumn">
+                <div  ng-controller="PhotoSliderController" class="page-collumn">
+                    <div class="container slider" ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()" ng-hide="!isCurrentSlideIndex($index)">
+                        <div class="col-md-3 col-xs-3" >
+                            <img ng-src="{{slide.foto}}" class="testemunhos-foto-grande" style="padding:0 auto"> <a class="arrow prev" ng-click="nextSlide()"></a> <a class="arrow next" ng-click="prevSlide()"></a> 
+                        </div>
+                        <div class = "col-md-9 col-xs-9">
+                            <blockquote class="three-col"> {{ slide.conteudo }} <cite> {{ slide.nome }} </cite> </blockquote>
+                        </div>
+                            <nav class="nav-photo-slider">
+                            <div class="wrapper">
+                            <div class="dots">
+                            <div class="dot" ng-repeat="slide in slides"> <a ng-src="{{slide.foto}}" ng-class="{'active':isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a> </div>
+                            </div>
+                            </div>
+                            </nav>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div ng-repeat="testemunhoGroup in testemunhosPequenos" class="page-collumn"> 
+                    <div class="row"> 
+                        <div ng-repeat="t in testemunhoGroup" class="col-md-6 col-sm-6 col-xs-12" ng-animate="'custom'"> 
+                            <div class="testemunhos-pequenos"> 
+                                <div class = "col-md-9 col-sm-8  col-xs-9 testemunhos-pequenos-texto"> 
+                                    <blockquote> {{ t.conteudo }} <cite> {{ t.nome }} </cite> </blockquote> 
+                                </div> 
+                                <div class="col-md-3 col-sm-4 col-xs-3"> 
+                                    <div class="circle container slider"> 
+                                        <img ng-src=" {{t.foto}} " class="circle slide slide-animation nonDraggableImage"> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+            </td>
+        </tr>
+    </table>
+<div>

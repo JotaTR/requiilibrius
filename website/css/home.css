@@ -1,0 +1,194 @@
+/*BOX DE SERVIÇOS*/
+.box-servicos{
+    position:relative;	
+}
+
+.box-servico{ 
+    width: 25%;
+    border: 1px solid rgba(247,143,30,1);
+    display: inline-block;
+    float:left;
+}
+
+.box-servico1{
+    background-color: #054950;
+}
+
+.box-servico2{
+    background-color: #789A9F;
+}
+
+.box-servico3{
+    background-color: #EDF4F5;
+}
+
+.box-servico4{
+    background-color: #F78F1E;
+}
+
+.transicao { transition: all 0.4s ease-in-out; }
+.transicao-video { transition: all 0.4s ease-in-out; }
+
+.box-servico-hover{
+    width: 50%;
+}
+
+.box-servico-nothover{
+    width: 16.66%;
+}
+
+.servico-video-hover{
+	float:right;
+    width: 40%;
+    background-color: darkblue;
+}
+
+.go-to-service{
+
+}
+
+.servico-text{
+    padding-top:10px;
+    padding-left:7%;
+    float:left;
+	font:lato;
+	text-transform:uppercase;
+    text-align: center;
+}
+
+.servico-text-complement{
+    font-size:50px;
+    color:#054950;
+}
+
+.servico-text-orange{
+    font-size:40px;
+    color: #F78F1E;
+	overflow:hidden;
+} 
+
+.servico-text-hover{
+    width: 50%;
+}
+
+.servico-text-nothover{
+    width: 100%;
+}
+
+.referencia{
+    float:right;
+}
+
+
+/**MAPA**/
+
+.map-container{
+    border-top: 2px solid rgba(247,143,30,1);
+    height: 300px;
+}
+
+.angular-google-map-container { 
+ 
+    height: 450px; 
+}
+
+.titulo-home{
+    color: rgba(247,143,30,1);
+	font-family: lato;
+    text-align: center;
+    text-transform: uppercase;
+	text-decoration:underline;
+	font:lato;
+}
+
+.section{
+}
+
+/**QUEM SOMOS**/
+.quemsomos-img{
+    /**height: 100%;**/
+    width: 35%;
+    float:left;
+    margin-right: 20px;
+}
+
+/**TECNICAS**/
+.tecnicas-row{
+    overflow: hidden;
+}
+
+.tecnicas{
+    margin-bottom:10px;
+    background-clip: padding-box;
+    display:inline-block; 
+    border: 5px solid transparent;
+    background-color: rgba(237,244,245,1);
+}
+
+.tecnicas-detalhes{
+    margin-bottom:10px;
+    margin-left 10%;
+    margin-top:10px;
+    width: 100%;
+    list-style-type:none;
+}
+
+.tecnica-detalhe{
+    text-align: center;
+}
+
+.tecnica-nome{
+    vertical-align: middle;    
+}
+
+.tecnica-main{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+/**DESTAQUES**/
+.destaque-container{
+   cursor: pointer;
+}
+
+.titulo-destaque{
+    color: rgba(247,143,30,1);
+    padding-bottom: 5px;
+    padding-top: 10px;
+    font-family: lato-regular;
+}
+
+
+.resumo-destaque{
+    padding-bottom: 10px;
+    padding-top: 5px;
+	text-align: justify;
+    text-indent: 2em;
+}
+
+
+.img-destaque{
+    
+}
+
+.arrow-container-destaques {
+    position: relative;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+}
+
+
+.arrow-destaques {
+    opacity: 0.6;
+    transition: 0.2s linear all;
+    width: 100%;
+}
+
+.arrow-destaques:hover {
+    opacity: 1;
+}

@@ -1,0 +1,231 @@
+<html ng-app="App" lang="en-us">
+
+<head>
+    <title>R'equilibri_us - Gabinete de Fisioterapia</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/photoslider.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+<!--
+    Libraries
+    <script type="text/javascript" src="js/libs/jquery-1.11.3.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/loadsh.min.js"></script>
+    <script type="text/javascript" src="xjs/libs/angular.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-md5.js"></script>
+    <script type="text/javascript" src="js/libs/angular-base64-upload.js"></script>
+    <script type="text/javascript" src="js/libs/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-promise-tracker.js"></script>
+    <script type="text/javascript" src="js/libs/angular-animate.min.js"></script>
+	<script type="text/javascript" src="js/libs/angular-touch.min.js"></script>
+	<script type="text/javascript" src="js/libs/angular-sanitize.min.js"></script>
+-->  
+
+	<!-- Libraries-->  
+    <script type="text/javascript" src="js/libs/jquery-1.11.3.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/loadsh.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-md5.js"></script>
+    <script type="text/javascript" src="js/libs/angular-base64-upload.js"></script>
+    <script type="text/javascript" src="js/libs/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/libs/angular-promise-tracker.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular-animate.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular-touch.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.6/angular-sanitize.min.js"></script>
+	
+<!--    
+    <script src="http://static.videogular.com/scripts/videogular/latest/videogular.js"></script>
+    <script src="http://static.videogular.com/scripts/controls/latest/vg-controls.js"></script>
+    <script src="http://static.videogular.com/scripts/overlay-play/latest/vg-overlay-play.js"></script>
+    <script src="http://static.videogular.com/scripts/poster/latest/vg-poster.js"></script>
+    <script src="http://static.videogular.com/scripts/buffering/latest/vg-buffering.js"></script>
+    <script src="http://static.videogular.com/scripts/youtube/latest/youtube.js"></script>
+-->
+
+    <!--Google Maps Libs-->
+    <script type="text/javascript" src="js/libs/angular-simple-logger.js"></script>
+    <script type="text/javascript" src="js/libs/angular-google-maps.min.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+    
+    <!--display adapter-->
+    <script src="js/setCss.js"></script>
+    
+    <!-- angular scripts -->
+    <script src="js/App.js"></script>
+    <script src="js/routes.js"></script>
+
+    <!-- angular Page controllers -->
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/ServicosController.js"></script>
+    <script src="js/controllers/ServicosQAController.js"></script>
+    <script src="js/controllers/EquipaController.js"></script>
+    <script src="js/controllers/EspacoController.js"></script>
+    <script src="js/controllers/FormacaoController.js"></script>
+    <script src="js/controllers/TestemunhosController.js"></script>
+    <script src="js/controllers/DestaquesController.js"></script>
+    <script src="js/controllers/ContactosController.js"></script>
+    <script src="js/controllers/FormController.js"></script>
+    <script src="js/controllers/VideoController.js"></script>
+    
+
+    <!-- angular Features controllers -->
+    <script src="js/controllers/PhotoSliderController.js"></script>
+
+    <!-- angular services-->
+    <script src="js/services/dataService.js"></script> 
+</head>
+
+<body>
+    
+    <div style="width:100%" ng-controller="MainController">
+        <div ng-swipe-right="goToPreviousPage()" ng-swipe-left="goToNextPage()">
+            <header class="header" ng-show="path == '' ">                    
+                <img id="header-image" src="img/logo.jpg" class='header-img'>
+            </header>                    
+            <nav id="upbar" ng-class="{ 'navbar': path == '', 'navbar-no-header': path != '' }" class="navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"><div class="r-navabar">R</div>' Equilibri_us</a>
+                    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li id="home-btn" class="active"><a ui-sref="/">Home</a></li>
+                            <li id="equipa-btn"><a ui-sref="equipa">Equipa</a></li>
+                            <li id="servicos-btn" class="dropdown"> 
+                                <a data-toggle="dropdown" class="dropdown-toggle">Serviços <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ui-sref="musculoEsqueletica">Ft. Músculo-Esquelética</a></li>
+                                    <!-- <li><a ui-sref="neuroMuscular">Ft. Neuromuscular</a></li>-->
+                                    <li><a ui-sref="saudeMulher">Saúde da Mulher</a></li>
+                                    <li><a ui-sref="saudeCrianca">Saúde da Criança</a></li>
+                                    <li><a ui-sref="saudeIdoso">Saúde do Idoso</a></li>
+                                    <li><a ui-sref="desporto">Ft. no Desporto</a></li>
+                                    <li><a ui-sref="fisioterapiaDanca">Ft. na Dança</a></li>
+                                    <li><a ui-sref="postura">Ft. nas Alterações Posturais</a></li>      
+                                    <li><a ui-sref="fisioterapiaDomicilio">Ft. ao Domicílio</a></li>      
+                                    <li><a ui-sref="nutricao"><strong>Nutrição</strong></a></li>
+                                </ul>
+                            </li>
+
+                            <li id="espaco-btn"><a ui-sref="espaco">Espaço</a></li>   
+                            <!--<li><a ui-sref="formacao">Formação & Ivestigação</a></li> -->    
+                            <!--<li><a ui-sref="testemunhos">Testemunhos</a></li>-->
+                            <li id="destaques-btn"><a ui-sref="destaques">Destaques</a></li>    
+                            <li id="contactos-btn"><a ui-sref="contactos">Contactos</a></li>
+
+                        </ul>   
+
+                    </div>
+                </div>   
+            </nav>    
+
+
+
+
+            <div class="main" ui-view = "">   </div>
+
+
+            <footer class="footer">
+
+                <div class="container" id="footer-container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            <h4 class="line3 center standard-h4title">
+                                <span> Links uteis</span>
+                            </h4>
+
+                            <ul class="footer-links">
+                                <li> <a href="#"></a></li>
+                            </ul>   
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-3">                
+                            <h4 class="line3 center standard-h4title">
+                                <span> Rede Social</span>
+                            </h4>    
+                            <div  class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <a href="https://www.facebook.com/REquilibri_us-Gabinete-Fisioterapia-545451488858469/" >
+                                        <img style="max-width:100%;" 
+                                             src="img/redesocial/fb_logo.png">
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-3">                
+                            <h4 class="line3 center standard-h4title">
+                                <span> Parcerias</span>
+                            </h4>    
+
+                            <div  class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 30px;padding-right: 0px;">
+                                    <a href="http://www.essa.pt/portal/" >
+                                        <img style="max-width:100%;" src="img/parcerias/lcm_logo.jpg" href="http://labcmotor.fmh.ulisboa.pt/" >
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-left: 10px;padding-right: 10px;">
+                                    <a href="http://www.essa.pt/portal/" >
+                                        <img style="max-width:100%;" src="img/parcerias/essa_logo.jpg" >
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right: 30px;padding-left: 0px;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-3">                
+                            <h4 class="line3 center standard-h4title">
+                                <span> Localizaçao</span>
+                            </h4>
+                            <ul> 
+                                <p>
+                                    <strong>                                
+                                    Avenida D. João I, nº28
+                                    </strong>                                
+                                    <br>
+                                    <strong>                                
+                                    2º a 6º das 9h às 21h
+                                    </strong>                                
+                                    <br>
+                                    <strong>                                
+                                    ft.requilibrius@gmail.com
+                                    <br>
+                                    (+351) 21 442 16 17
+                                    </strong>                                
+                                </p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer> 
+        </div>
+    </div>   
+ 
+</body>
+    
+
+</html>

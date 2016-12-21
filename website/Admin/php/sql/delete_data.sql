@@ -1,0 +1,11 @@
+DELETE from requilib_website.tecnicaDetalhe;
+DELETE from requilib_website.servico;
+DELETE from requilib_website.cvitem;
+DELETE from requilib_website.servico_item;
+DELETE from requilib_website.servico_itemQA;
+DELETE from requilib_website.img;
+DELETE from requilib_website.video;
+DELETE from requilib_website.contact;
+DELETE from requilib_website.destaque;
+DELETE from requilib_website.tecnica;
+DELETE from requilib_website.funcionario;

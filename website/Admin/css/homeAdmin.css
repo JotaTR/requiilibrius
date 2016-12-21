@@ -1,0 +1,26 @@
+.data-table {
+    width: 100%;
+}
+
+.button-table {
+    width: 100%;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: rgba(247,143,30,0.8);
+    color: white;
+}
+
+.backup-selected{
+	background-color: rgba(247,143,30,0.5);
+}
+

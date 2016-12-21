@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="css/homeAdmin.css">
+<table style="width:100%">
+    <tr>
+        <td colspan="2">
+            <div class="titulo page-collumn">
+                Gestor do Site
+            </div>
+        </td>
+    </tr> 
+    
+    <tr>
+        <td>
+			<table class="data-table">
+				<tr ng-click="select_backup('-1')" >
+					<th style="width:50px"></th>
+					<th>Nome do ficheiro</th>
+					<th>Data</th>
+					<th>Tamanho</th>
+				</tr>
+				<tr ng-repeat="backup in backups" ng-click="select_backup($index)">
+					<td ng-class="{ 'backup-selected': selected_backup == $index }">
+					</td>
+					<td>
+						<div class="">
+							{{ backup.filename}}
+						</div>
+					</td>
+					<td>
+						<div class="">
+							{{ timeConverter(backup.date) }}
+						</div>
+					</td>
+					<td style="text-align:right">
+						<div class="">
+							{{ backup.filesize + " kB"}} 
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						
+					</td>
+					<td>
+						<input type="file" id="file" name="file"/>
+					</td>
+					<td>
+						<button ng-click="upload_file()">Carregar Ficheiro de Backup</button>
+					</td>
+					<td>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="uploadLoading">
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table class="button-table">
+				<tr>
+					<td>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="backupLoading">
+					</td>
+					<td>
+						<button ng-click="backup_website()">Criar Backup</button> do ponto actual do website.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="downloadLoading">
+					</td>
+					<td>
+						<button ng-click="download_file()">Download Ficheiro de Backup</button>	selecionado.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="restoreLoading">
+					</td>
+					<td>
+						<button ng-click="restore_website()">Restaurar Website</button> a partir do ficheiro de backup selecionado.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="deleteLoading">
+					</td>
+					<td>
+						<button ng-click="delete_file()">Eliminar Ficheiro</button> selecionado.
+					</td>
+				</tr>
+			</table>         
+        </td>
+    </tr> 
+</table>
+

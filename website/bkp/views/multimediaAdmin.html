@@ -1,0 +1,44 @@
+ <link rel="stylesheet" href="css/conteudos.css">
+<table style="width:100%">
+    <tr>
+        <td>
+            <div class="titulo page-collumn">
+                Fotos dos terapeutas
+            </div>
+        </td>
+    </tr> 
+    
+    
+
+    <tr>
+        <td>
+            <div class="row page-collumn">
+                    
+                    <div class="row">
+                        <div ng-repeat="img in imgList" class="col-md-4  col-sm-12 col-xs-12">
+                            <button ng-click="saveFoto(img)">
+                                Gravar Alterações!
+                            </button>
+                            <button ng-click="deleteFoto(img)">
+                                Eliminar!
+                            </button>
+                            <img ng-src="img.path" style="width:100%" />
+                            <div style="width:100%">
+                                Descrição:
+                            </div>
+                            <div contenteditable ng-model="img.descricao" style="width:100%">
+                            </div>
+                            <div style="width:100%">
+                                Path:
+                            </div>
+                            <div style="width:100%">
+                            </div>
+                        </div>
+            
+                    </div>                
+                </div>
+                
+            </div>           
+        </td>
+    </tr>
+</table>
