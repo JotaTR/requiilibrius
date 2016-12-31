@@ -141,6 +141,11 @@ App.controller('HomeControllerAdmin', ['$scope', '$sce', '$stateParams','dataSer
 	//AUXS
 	$scope.generate_file = function(file_data, filename){
 		
+        var file_data_dec = filename;
+        if(filename != "insert_data.sql")
+        {    
+            file_data_dec = decodeURIComponent(escape(file_data));
+        }
 		var file = new Blob([ file_data_dec ], {
 			type : 'application/json'
 		});

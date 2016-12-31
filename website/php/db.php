@@ -269,7 +269,7 @@
 	
 	//Private functions
 	function get_img($dbconn, $entidade, $entidade_id){
-	    $query = "SELECT * FROM requilib_website.img WHERE entidade = '".$entidade."' AND entidade_id = ".$entidade_id.";";
+	    $query = "SELECT * FROM requilib_website.img WHERE entidade = '".$entidade."' AND entidade_id = ".$entidade_id." ORDER by seq asc;";
         
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
 		$counter = 0;
@@ -279,6 +279,10 @@
 			$img[$counter]['path'] = $row['path'];
 			$img[$counter]['nome'] = $row['nome'];
 			$img[$counter]['id'] = $row['id'];
+			$img[$counter]['entidade_id'] = $row['entidade_id'];
+			$img[$counter]['seq'] = $row['seq'];
+			$img[$counter]['main'] = $row['main'];
+			$img[$counter]['entidade'] = $row['entidade'];
 			$img[$counter]['descricao'] = $row['descricao'];
 			$counter++;//proxima medicao da tabela SQL
 		}	
@@ -287,7 +291,7 @@
 	
 	
 	function get_video($dbconn, $entidade, $entidade_id){
-	    $query = "SELECT * FROM requilib_website.video WHERE entidade = '".$entidade."' AND entidade_id = ".$entidade_id.";";
+	    $query = "SELECT * FROM requilib_website.video WHERE entidade = '".$entidade."' AND entidade_id = ".$entidade_id." ORDER by seq asc;";
         
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
 		$counter = 0;
@@ -297,6 +301,7 @@
 			$videos[$counter]['url'] = $row['url'];
 			$videos[$counter]['type'] = $row['type'];
 			$videos[$counter]['nome'] = $row['nome'];
+			$videos[$counter]['seq'] = $row['´seq'];
 			$videos[$counter]['id'] = $row['id'];
 			$videos[$counter]['descricao'] = $row['descricao'];
 			$counter++;//proxima medicao da tabela SQL

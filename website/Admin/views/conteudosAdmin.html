@@ -9,89 +9,117 @@
         </td>
     </tr> 
     
-    
 
     <tr>
         <td>
             <div class="row page-collumn equipa-nav">
                 <div class="col-md-6  col-sm-12 col-xs-12">
-                    <a ui-sref="destaquesAdmin({destaque_id: c.id})" ng-repeat="c in conteudo" class="conteudo thumbnail" 
+                    <div ng-repeat="c in conteudo" class="conteudo thumbnail" 
                          ng-if="(
                                     (($index % 2 == 0) && (width > 991)) 
                                       ||  
                                     (width <= 991)
                                 )">
-                        <div class="row">
+						<button  class="btn btn-success" ng-click="editFotos(c.id)">
+							Editar Fotos
+						</button>
+                        <button  class="btn btn-success" ng-click="editVideos(c.id)">
+							Editar Videos
+						</button>
+                        <a class="row" ui-sref="destaquesAdmin({destaque_id: c.id})" >
                             <div class="titulo-conteudo col-md-12 col-sm-12 col-xs-12">
                                 {{c.titulo}}
                             </div>
-                            <img class="img-conteudo col-md-4 col-sm-42 col-xs-4" ng-src="{{ c.img[0].path | destaqueImageFilter  }}">  
+                            <img class="img-conteudo col-md-4 col-sm-42 col-xs-4" ng-src="{{'../' +  c.img[0].path | destaqueImageFilter  }}">  
                             <div class="resumo-conteudo text col-md-8 col-sm-8 col-xs-8">
                                 {{c.resumo}}
                             </div>
-                        </div>
-                    </a>
+                        </a>
+						<button  class="btn btn-danger" ng-click="deleteDestaque(c.id)">
+							Eliminar Destaque
+						</button>
+                    </div>
                 </div>
                 
                 <div class="col-md-6  col-sm-12 col-xs-12">
-                    <a ui-sref="destaquesAdmin({destaque_id: c.id})"  ng-repeat="c in conteudo" class="conteudo thumbnail" 
+                    <div ng-repeat="c in conteudo" class="conteudo thumbnail" 
                          ng-if="(
                                     (($index % 2 == 1) && (width > 991)) 
                                 )" >
-                        <div class="row">
+						<button class="btn btn-success" ng-click="editFotos(c.id)">
+							Editar Fotos
+						</button>
+						<button class="btn btn-success" ng-click="editVideos(c.id)">
+							Editar Videos
+						</button>
+                        <a ui-sref="destaquesAdmin({destaque_id: c.id})" class="row">
                             <div class="titulo-conteudo col-md-12 col-sm-12 col-xs-12">
                                 {{c.titulo}}
                             </div>
-                            <img class="img-conteudo col-md-4 col-sm-42 col-xs-4" ng-src="{{ c.img[0].path | destaqueImageFilter  }}">  
+                            <img class="img-conteudo col-md-4 col-sm-42 col-xs-4" ng-src="{{ '../' + c.img[0].path | destaqueImageFilter  }}">  
                             <div class="resumo-conteudo text col-md-8 col-sm-8 col-xs-8">
                                 {{c.resumo}}
                             </div>
-                        </div>
-                    </a>
+                        </a>
+						<button  class="btn btn-danger" ng-click="deleteDestaque(c.id)">
+							Eliminar Destaque
+						</button>
+                    </div>
                 </div>
             </div>           
         </td>
     </tr> 
+    <tr>
+		<td>
+			<button type="button" class="btn btn-primary btn-block" ng-click="addDestaque()">Adicionar Novo Destaque</button>
+		<td>
+    </tr> 
 </table>
 
+		
 <div class="conteudo-todo-shadow" ng-hide="contentSelected == -1">
     <div>
         <a class="close" ui-sref="{destaque_id: 0}"><img class="image-close" src="../img/icons/close.png" ></a>
     </div>
     <div class="conteudo-todo">
-        <button ng-click="saveDestaque(conteudo[contentSelected])">
+        <button class="btn btn-warning" ng-click="saveDestaque(conteudo[contentSelected])">
             Gravar!
         </button>
         <div contenteditable ng-model="conteudo[contentSelected].titulo" class="titulo-conteudo-selected col-md-12 col-sm-12 col-xs-12 contenteditable">
         </div>
-        <div contenteditable ng-model="conteudo[contentSelected].resumo" class="resumo-conteudo text col-md-12 col-sm-12 col-xs-12" contenteditable>
+        <div contenteditable ng-model="conteudo[contentSelected].resumo" class="resumo-conteudo text col-md-12 col-sm-12 col-xs-12 contenteditable">
         </div>
-        <img class="img-conteudo-selected col-md-4 col-sm-42 col-xs-4" ng-src="{{ conteudo[contentSelected].img[0].path | destaqueImageFilter }}"></img>  
+        <img class="img-conteudo-selected col-md-4 col-sm-42 col-xs-4" ng-src="{{ '../' + conteudo[contentSelected].img[0].path | destaqueImageFilter }}"></img>  
         <div contenteditable ng-model="conteudo[contentSelected].texto" class="text col-md-8 col-sm-8 col-xs-8 contenteditable">
         </div>
 
         <div class="col-md-12 col-sm-12 col-xs-12" class="video-container" ng-show="conteudo[contentSelected].video.length > 0">
-            <!--
             
-             <video id="video"
-                    ng-show="conteudo[contentSelected].video[0].type == 'mp4'" 
-                    width="480" height="360" 
-                    style="display:block;margin: 0 auto;" 
-                    type="video/mp4" 
-                    controls controls="controls" name="Video Name" 
-                    ng-src="{{ conteudo[contentSelected].video[0].url | trustUrl }}">
-            </video>
-    <!--
-            <iframe class="iframe"
-                    width="480" height="360" 
-                    style="display:block;margin: 0 auto;"
-                    ng-src="{{ conteudo[contentSelected].video[0].url | trustUrl }}" 
-            </iframe>          
-        </div>
-            -->
         <a class="arrow next" ng-click="showNext()"></a>
         <a class="arrow previous" ng-click="showPrevious()"></a>
-    -->
+		</div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12" class="video-container" ng-show="conteudo[contentSelected].video.length > 0">
+        <!--
+
+         <video id="video"
+                ng-show="conteudo[contentSelected].video[0].type == 'mp4'" 
+                width="480" height="360" 
+                style="display:block;margin: 0 auto;" 
+                type="video/mp4" 
+                controls controls="controls" name="Video Name" 
+                ng-src="{{ conteudo[contentSelected].video[0].url | trustUrl }}">
+        </video>
+        -->
+        <iframe class="iframe"
+                width="480" height="360" 
+                style="display:block;margin: 0 auto;"
+                ng-src="{{ conteudo[contentSelected].video[0].url | trustUrl }}">
+        </iframe>
     </div>
 </div>
+
+<edit-video index="{{ selectedVideoIndex }}" entity-list="conteudo" entity="destaque" ng-hide="selectedVideoIndex == -1"></edit-video>
+
+<edit-foto index="{{ selectedIndex }}" entity-list="conteudo" entity="destaque" ng-hide="selectedIndex == -1"></edit-foto>
 

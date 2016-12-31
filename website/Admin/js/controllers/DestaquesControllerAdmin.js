@@ -4,12 +4,26 @@ App.controller('DestaquesControllerAdmin', ['$scope', '$sce', '$stateParams','da
     $scope.titulo = "Destaques";
     $scope.width = $window.outerWidth;//para ordenar notocias
     $scope.contentSelected = -1; 
+    $scope.selectedIndex = -1; 
+    $scope.selectedVideoIndex = -1; 
     document.body.style.overflowY="visible";
     document.body.style.overflowX="hidden";
+	
     $(window).resize(function() {
          $scope.width = $window.outerWidth;//para ordenar notocias
     });
     
+	
+	//edit image purposes
+	$scope.get_entities = function(){
+		dataServiceAdmin.getDestaques().then(function(response) 
+        {   
+            $scope.conteudo = response.data;
+            console.log(response.data);
+			return $scope.conteudo;
+        });
+	}
+		
     $scope.showMore = function(index){
         $scope.contentSelected = index;
         document.body.style.overflow="hidden";
@@ -31,7 +45,8 @@ App.controller('DestaquesControllerAdmin', ['$scope', '$sce', '$stateParams','da
         }
     }
     
-    $scope.saveDestaque = function(destaque){    
+    $scope.saveDestaque = function(destaque)
+	{    
         dataServiceAdmin.saveDestaque(destaque).then(function(response) 
         {
             if(response.data == true){
@@ -41,9 +56,68 @@ App.controller('DestaquesControllerAdmin', ['$scope', '$sce', '$stateParams','da
             }
         });
     }
+	
+	$scope.deleteDestaque = function(destaqueId)
+	{    
+		var confirmation = confirm("Tem a certeza que pretende eliminar o video?");
+		if(!confirmation)
+		{
+			return;
+		}
+        dataServiceAdmin.deleteDestaque(destaqueId).then(function(response) 
+        {
+            if(response.data == true){
+                $scope.get_entities();
+            }else{
+                alert("Erro");
+            }
+        });
+	}
+	
+	$scope.addDestaque = function()
+	{    
+        dataServiceAdmin.addDestaque().then(function(response) 
+        {
+            if(response.data == true){
+                $scope.get_entities();
+            }else{
+                alert("Erro");
+            }
+        });
+    }
     
-     
+    //Calling multimediaa editors
+    $scope.editFotos = function(entidade_id)
+    {    
+		console.log(entidade_id);
+        for ( $scope.selectedIndex = 0; $scope.selectedIndex < $scope.conteudo.length; $scope.selectedIndex++ ) 
+        {
+            if( $scope.conteudo[$scope.selectedIndex].id == entidade_id)
+            {
+				document.body.style.overflow="hidden";
+                break;
+            }
+        }
+		
+    }
     
+    
+    $scope.editVideos = function(entidade_id)
+    {    
+		console.log(entidade_id);
+        for ( $scope.selectedVideoIndex = 0; $scope.selectedVideoIndex < $scope.conteudo.length; $scope.selectedVideoIndex++ ) 
+        {
+            if( $scope.conteudo[$scope.selectedVideoIndex].id == entidade_id)
+            {
+				document.body.style.overflow="hidden";
+                break;
+            }
+        }
+    }
+    
+    
+    
+    //MAIN
     console.log(dataServiceAdmin.destaques);
     if(dataServiceAdmin.destaques == null)
     {
@@ -61,7 +135,7 @@ App.controller('DestaquesControllerAdmin', ['$scope', '$sce', '$stateParams','da
                 for( var i=0 ; i<nbr_destaques; i++ ){
                     if($scope.conteudo[i].id == $stateParams.destaque_id){
                         $stateParams.destaque_id = -1;
-                        $scope.contentSelected=i;
+                        $scope.contentSelected = i;
                         break;
                     }
                 }

@@ -1,3 +1,9 @@
+	#All
+	INSERT INTO requilib_website.funcionario (nome, equipa, resumo) VALUES ('All', 'zz','Gabinete privado de serviços de Fisioterapia e de Saúde. A área da Fisioterapia actua em condições orto-traumatológicatras e em lesões desportivas, em problemas da coluna vertebral, em Pediatria e na Saúde da Mulher (preparação de pré-parto, pós-parto, incontinência urinária feminina e masculina), assim como na Geriatria (programas de prevenção de quedas e de mobilidade global), contando ainda com o serviço de Fisioterapia ao domícilio. Há ainda a colaboração com outros profissionais, Nutricionista, de modo a garantir aos utentes uma valência vasta e dirigida às suas necessidades específicas.');
+	INSERT INTO requilib_website.img (path, nome, descricao, entidade, entidade_id) VALUES ('img/equipa/groupPhoto.jpg', 'All', 'main', 'equipa', (SELECT id FROM requilib_website.funcionario WHERE nome = 'All'));
+	
+	
+	#Raul Oliveira
 	INSERT INTO requilib_website.funcionario (nome, equipa, resumo) VALUES ('Raúl Oliveira', 'ft','Fisioterapeuta licenciado pela Escola Superior do Alcoitão (1982).<br>Mestrado em Desenvolvimento Motor (Faculdade de Motricidade Humana, UL - 1999)<br>Doutoramento em Ciências da Motricidade, na especialidade de Ciências da Fisioterapia (Faculdade de Motricidade Humana, UL)<br>Coordena desde cedo a prática clínica com a investigação científica e com o ensino superior. <br>Autor de diversos artigos em revistas e livros nacionais/internacionais e prelector em diversos seminários e conferências específicas da área.<br>Prática e vocação profissional direccionada para as áreas neuro-músculo-esquelética, com interesse específico na identificação, prevenção e intervenção em fatores de risco de lesão, alterações da qualidade do movimento e funcionalidade.<br> ');
 
 	#Raul Oliveira CV Items

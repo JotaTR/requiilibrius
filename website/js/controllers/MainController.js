@@ -78,7 +78,7 @@ App.controller('MainController', ['$scope', '$location',function ($scope, $locat
             if( $(this).scrollTop() > $scope.hdr ) {
                 $scope.mn.addClass($scope.mns);
             } else {
-                $scope.mn.removeClass($scope.mns);
+                $scope.mn.  removeClass($scope.mns);
             }
         }
     });

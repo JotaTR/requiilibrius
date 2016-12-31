@@ -1,0 +1,1 @@
+UPDATE requilib_website.img SET nome = '...', descricao = '...' WHERE id = '49' and path = 'img/equipa/AO/1482615299.jpg';DELETE FROM requilib_website.img WHERE id = 49;UPDATE requilib_website.img SET path = '' WHERE id = '50';DELETE FROM requilib_website.img WHERE id = 28;

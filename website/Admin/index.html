@@ -64,11 +64,13 @@
     <script src="js/routesAdmin.js"></script>
 
     <!-- angular Page controllers -->
+    <script src="js/directivesAdmin.js"></script>  
     <script src="../js/controllers/MainController.js"></script>  
     <script src="js/controllers/HomeControllerAdmin.js"></script>
     <script src="js/controllers/EquipaControllerAdmin.js"></script>
     <script src="js/controllers/DestaquesControllerAdmin.js"></script>
-    <script src="js/controllers/MultimediaControllerAdmin.js"></script>
+    <script src="js/controllers/EditFotoControllerAdmin.js"></script>
+    <script src="js/controllers/EditVideoControllerAdmin.js"></script>
 	
     <!-- angular Features controllers -->
     <script src="../js/controllers/PhotoSliderController.js"></script>
@@ -102,8 +104,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li id="home-btn"><a ui-sref="homeAdmin">Home Admin</a></li>
                             <li id="equipa-btn"><a ui-sref="equipaAdmin">Equipa Admin</a></li>
-                            <li id="destaques-btn"><a ui-sref="destaquesAdmin">Destaques Admin</a></li>    
-                            <li id="contactos-btn"><a ui-sref="mmAdmin">Multimedia Admin</a></li>
+                            <li id="destaques-btn"><a ui-sref="destaquesAdmin">Destaques Admin</a></li> 
                         </ul>   
                     </div>
                 </div>   
@@ -175,7 +176,7 @@
                             <ul> 
                                 <p>
                                     <strong>                                
-                                    Avenida D. João I, nº28
+                                    Avenida D. João I, nº8
                                     </strong>                                
                                     <br>
                                     <strong>                                
@@ -186,6 +187,8 @@
                                     ft.requilibrius@gmail.com
                                     <br>
                                     (+351) 21 442 16 17
+                                    <br>
+                                    (+351) 91 777 65 56
                                     </strong>                                
                                 </p>
                             </ul>

@@ -38,13 +38,12 @@
 				</tr>
 				<tr>
 					<td>
-						
 					</td>
 					<td>
 						<input type="file" id="file" name="file"/>
 					</td>
 					<td>
-						<button ng-click="upload_file()">Carregar Ficheiro de Backup</button>
+						<button  ng-click="upload_file()">Carregar Ficheiro de Backup</button>
 					</td>
 					<td>
 						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="uploadLoading">
@@ -67,7 +66,7 @@
 						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="downloadLoading">
 					</td>
 					<td>
-						<button ng-click="download_file()">Download Ficheiro de Backup</button>	selecionado.
+						<button ng-disabled="selected_backup == -1" ng-click="download_file()">Download Ficheiro de Backup</button>	selecionado.
 					</td>
 				</tr>
 				<tr>
@@ -75,12 +74,12 @@
 						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="restoreLoading">
 					</td>
 					<td>
-						<button ng-click="restore_website()">Restaurar Website</button> a partir do ficheiro de backup selecionado.
+						<button ng-disabled="selected_backup == -1" ng-click="restore_website()">Restaurar Website</button> a partir do ficheiro de backup selecionado.
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="deleteLoading">
+						<img ng-disabled="selected_backup == -1" src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="deleteLoading">
 					</td>
 					<td>
 						<button ng-click="delete_file()">Eliminar Ficheiro</button> selecionado.

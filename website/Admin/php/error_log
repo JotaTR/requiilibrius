@@ -1,22 +1,151 @@
-[19-Dec-2016 00:36:58 Europe/Lisbon] PHP Warning:  mysql_connect(): Access denied for user 'requilib_user'@'localhost' (using password: YES) in /home/requilib/public_html/Admin/php/adminDB.php on line 14
-[19-Dec-2016 00:36:58 Europe/Lisbon] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/requilib/public_html/Admin/php/adminDB.php on line 20
-[19-Dec-2016 00:36:58 Europe/Lisbon] PHP Warning:  mysql_query(): A link to the server could not be established in /home/requilib/public_html/Admin/php/adminDB.php on line 20
-[19-Dec-2016 00:36:58 Europe/Lisbon] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /home/requilib/public_html/Admin/php/adminAccess.php on line 68
-[19-Dec-2016 00:47:10 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/requilib/public_html/Admin/php/adminDB.php on line 341
-[19-Dec-2016 00:47:36 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/requilib/public_html/Admin/php/adminDB.php on line 341
-[19-Dec-2016 00:47:48 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/requilib/public_html/Admin/php/adminDB.php on line 342
-[19-Dec-2016 21:09:44 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$dir' (T_VARIABLE) in /home/requilib/public_html/Admin/php/adminDB.php on line 277
-[19-Dec-2016 22:57:03 Europe/Lisbon] PHP Warning:  fwrite() expects parameter 1 to be resource, string given in /home/requilib/public_html/Admin/php/adminDB.php on line 244
-[19-Dec-2016 23:00:10 Europe/Lisbon] PHP Warning:  fwrite() expects parameter 1 to be resource, string given in /home/requilib/public_html/Admin/php/adminDB.php on line 244
-[19-Dec-2016 23:02:37 Europe/Lisbon] PHP Warning:  fwrite() expects parameter 1 to be resource, string given in /home/requilib/public_html/Admin/php/adminDB.php on line 244
-[19-Dec-2016 23:34:11 Europe/Lisbon] PHP Parse error:  syntax error, unexpected ',' in /home/requilib/public_html/Admin/php/adminDB.php on line 276
-[19-Dec-2016 23:35:06 Europe/Lisbon] PHP Parse error:  syntax error, unexpected ',' in /home/requilib/public_html/Admin/php/adminDB.php on line 277
-[20-Dec-2016 00:05:45 Europe/Lisbon] PHP Parse error:  syntax error, unexpected ',' in /home/requilib/public_html/Admin/php/adminDB.php on line 258
-[20-Dec-2016 00:21:49 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '"<br>"' (T_CONSTANT_ENCAPSED_STRING) in /home/requilib/public_html/Admin/php/adminDB.php on line 242
-[20-Dec-2016 01:00:54 Europe/Lisbon] PHP Warning:  mysql_connect(): Access denied for user 'requilib_admin'@'localhost' (using password: YES) in /home/requilib/public_html/Admin/php/adminDB.php on line 14
-[20-Dec-2016 01:00:54 Europe/Lisbon] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /home/requilib/public_html/Admin/php/adminAccess.php on line 78
-[20-Dec-2016 21:40:35 Europe/Lisbon] PHP Fatal error:  Can't use function return value in write context in /home/requilib/public_html/Admin/php/adminDB.php on line 250
-[20-Dec-2016 21:40:40 Europe/Lisbon] PHP Fatal error:  Can't use function return value in write context in /home/requilib/public_html/Admin/php/adminDB.php on line 250
-[20-Dec-2016 21:42:10 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/requilib/public_html/Admin/php/adminDB.php on line 251
-[20-Dec-2016 21:42:30 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/requilib/public_html/Admin/php/adminDB.php on line 251
-[20-Dec-2016 21:42:59 Europe/Lisbon] PHP Warning:  filesize() expects parameter 1 to be a valid path, resource given in /home/requilib/public_html/Admin/php/adminDB.php on line 250
+[24-Dec-2016 02:56:00 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$path' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 239
+[24-Dec-2016 02:56:01 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$path' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 239
+[24-Dec-2016 02:57:20 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$path' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 239
+[24-Dec-2016 02:58:01 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$path' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 239
+[24-Dec-2016 02:59:43 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '}' in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 248
+[24-Dec-2016 03:00:15 Europe/Lisbon] PHP Warning:  Missing argument 4 for add_foto_f(), called in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 93 and defined in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 259
+[24-Dec-2016 03:00:15 Europe/Lisbon] PHP Fatal error:  Call to a member function format() on null in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 262
+[24-Dec-2016 03:23:05 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$filename' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 276
+[24-Dec-2016 03:24:11 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$filename' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 276
+[24-Dec-2016 03:24:53 Europe/Lisbon] PHP Fatal error:  Call to undefined function pg_query() in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 187
+[24-Dec-2016 03:24:56 Europe/Lisbon] PHP Fatal error:  Call to undefined function pg_query() in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 187
+[24-Dec-2016 12:58:56 Europe/Lisbon] PHP Fatal error:  Call to undefined function pg_query() in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 188
+[24-Dec-2016 13:03:26 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'audit' (T_STRING) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 144
+[24-Dec-2016 13:17:51 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '}' in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 69
+[24-Dec-2016 13:42:38 Europe/Lisbon] PHP Warning:  rename(img/equipa/RO/1.jpg,../../img/deleted/1.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 13:43:46 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 13:45:04 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 13:47:57 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 14:24:51 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 14:25:21 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 14:31:27 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 14:35:20 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO1482548808.jpg,../../img/deleted/AO1482548808.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 14:35:49 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482590144.jpg,../../img/deleted/1482590144.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 17:55:51 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482602149.jpg,../../img/deleted/1482602149.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[24-Dec-2016 18:10:58 Europe/Lisbon] PHP Warning:  log() expects parameter 1 to be double, string given in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 162
+[24-Dec-2016 18:26:11 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'elseif' (T_ELSEIF) in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 103
+[24-Dec-2016 20:06:10 Europe/Lisbon] PHP Warning:  Illegal string offset 'funcao' in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 105
+[24-Dec-2016 20:07:00 Europe/Lisbon] PHP Warning:  Illegal string offset 'funcao' in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 104
+[24-Dec-2016 20:10:32 Europe/Lisbon] PHP Warning:  Illegal string offset 'funcao' in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 103
+[24-Dec-2016 20:12:14 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482609813.jpg,../../img/deleted/1482609813.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 138
+[24-Dec-2016 20:13:38 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 138
+[24-Dec-2016 20:16:41 Europe/Lisbon] PHP Warning:  rename(,../../img/deleted/): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 138
+[24-Dec-2016 20:19:21 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/main.jpg,../../img/deleted/main.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 138
+[24-Dec-2016 22:30:16 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482615299.jpg,../../img/deleted/1482615299.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:30:16 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482615299.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:37:08 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482615299.jpg,../../img/deleted/1482615299.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:37:08 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482615299.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:37:15 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482615299.jpg,../../img/deleted/1482615299.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:37:15 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482615299.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:37:49 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482615299.jpg,../../img/deleted/1482615299.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:37:50 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482615299.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:39:50 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482615299.jpg,../../img/deleted/1482615299.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 111
+[24-Dec-2016 22:41:10 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482619257.jpg,../../img/deleted/1482619257.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:41:10 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482619257.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:43:47 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482619257.jpg,../../img/deleted/1482619257.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:43:47 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482619257.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:46:29 Europe/Lisbon] PHP Warning:  rename(img/equipa/AO/1482619257.jpg,../../img/deleted/1482619257.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[24-Dec-2016 22:46:29 Europe/Lisbon] PHP Warning:  fopen(img/equipa/AO/1482619257.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 160
+[24-Dec-2016 22:49:28 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/AO/1482619257.jpg,../../img/deleted/1482619257.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 158
+[25-Dec-2016 02:09:25 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/DF/main.jpg,../../img/deleted/main.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 111
+[25-Dec-2016 02:32:13 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$img' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 167
+[25-Dec-2016 02:40:59 Europe/Lisbon] PHP Warning:  Missing argument 2 for get_img_seq(), called in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 105 and defined in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 328
+[25-Dec-2016 02:40:59 Europe/Lisbon] PHP Warning:  mysql_query() expects parameter 2 to be resource, string given in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 332
+[25-Dec-2016 02:41:02 Europe/Lisbon] PHP Warning:  Missing argument 2 for get_img_seq(), called in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 105 and defined in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 328
+[25-Dec-2016 02:41:02 Europe/Lisbon] PHP Warning:  mysql_query() expects parameter 2 to be resource, string given in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 332
+[25-Dec-2016 03:09:27 Europe/Lisbon] PHP Warning:  rename(../../img/1482635345.jpg,../../img/deleted/1482635345.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 163
+[25-Dec-2016 03:11:06 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 163
+[25-Dec-2016 03:11:06 Europe/Lisbon] PHP Warning:  fopen(../../): failed to open stream: Is a directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 165
+[25-Dec-2016 03:16:34 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 163
+[25-Dec-2016 03:16:34 Europe/Lisbon] PHP Warning:  fopen(../../): failed to open stream: Is a directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 165
+[25-Dec-2016 03:17:33 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 163
+[25-Dec-2016 03:17:33 Europe/Lisbon] PHP Warning:  fopen(../../): failed to open stream: Is a directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 165
+[25-Dec-2016 20:58:24 Europe/Lisbon] PHP Warning:  rename(../..//1482699473.jpg,../../img/deleted/1482699473.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 142
+[25-Dec-2016 21:00:10 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 22:33:56 Europe/Lisbon] PHP Warning:  rename(../..//1482704410.jpg,../../img/deleted/1482704410.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 22:49:58 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 22:58:11 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482706200.jpg,../../img/deleted/1482706200.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 23:02:25 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/2.jpg,../../img/deleted/2.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 23:02:29 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/4.jpg,../../img/deleted/4.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 23:46:04 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/2.jpg,../../img/deleted/2.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[25-Dec-2016 23:46:07 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/4.jpg,../../img/deleted/4.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[26-Dec-2016 00:01:49 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482710017.jpg,../../img/deleted/1482710017.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 112
+[26-Dec-2016 00:18:31 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/2.jpg,../../img/deleted/2.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[26-Dec-2016 00:18:34 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/CO/4.jpg,../../img/deleted/4.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 00:53:33 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482799966.jpg,../../img/deleted/1482799966.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:40 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800587.jpg,../../img/deleted/1482800587.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:42 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482798575.jpg,../../img/deleted/1482798575.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:44 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482799009.jpg,../../img/deleted/1482799009.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:45 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482799755.jpg,../../img/deleted/1482799755.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:47 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800126.jpg,../../img/deleted/1482800126.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:49 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800289.jpg,../../img/deleted/1482800289.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:50 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800344.jpg,../../img/deleted/1482800344.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:51 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800540.jpg,../../img/deleted/1482800540.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:07:53 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482798235.jpg,../../img/deleted/1482798235.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:13:49 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482801225.jpg,../../img/deleted/1482801225.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:13:52 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482801220.jpg,../../img/deleted/1482801220.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:24:17 Europe/Lisbon] PHP Warning:  rename(../../img/destaques/db/1482801854.jpg,../../img/deleted/1482801854.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:31:50 Europe/Lisbon] PHP Warning:  fopen(../../img/destaques/db/1482801999.jpg): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 155
+[27-Dec-2016 01:51:35 Europe/Lisbon] PHP Warning:  rename(../../img/destaques/db/1482803396.jpg,../../img/deleted/1482803396.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 01:57:58 Europe/Lisbon] PHP Warning:  fopen(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 155
+[27-Dec-2016 01:58:46 Europe/Lisbon] PHP Warning:  fopen(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 155
+[27-Dec-2016 01:59:02 Europe/Lisbon] PHP Warning:  rename(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B,../../img/deleted/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 02:01:44 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482801255.jpg,../../img/deleted/1482801255.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 02:08:32 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482801547.jpg,../../img/deleted/1482801547.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 02:08:34 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482800552.jpg,../../img/deleted/1482800552.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[27-Dec-2016 02:08:36 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/db/1482801357.jpg,../../img/deleted/1482801357.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[30-Dec-2016 00:19:34 Europe/Lisbon] PHP Fatal error:  Call to undefined function add_video_db() in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 128
+[30-Dec-2016 00:19:55 Europe/Lisbon] PHP Fatal error:  Call to undefined function add_video_db() in /home/requilib/public_html/TST/Admin/php/adminAccess.php on line 128
+[30-Dec-2016 00:25:56 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$query' (T_VARIABLE) in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 322
+[30-Dec-2016 00:37:46 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/AO/main.jpg,../../videos/deleted/main.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 147
+[30-Dec-2016 00:37:54 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/FS/main.jpg,../../videos/deleted/main.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 147
+[30-Dec-2016 00:42:44 Europe/Lisbon] PHP Warning:  fopen(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): failed to open stream: No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 184
+[30-Dec-2016 00:42:55 Europe/Lisbon] PHP Warning:  rename(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B,../../img/deleted/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 118
+[30-Dec-2016 00:50:36 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/FS/1.jpg,../../videos/deleted/1.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 146
+[30-Dec-2016 00:54:37 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/FS/3.jpg,../../videos/deleted/3.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 146
+[30-Dec-2016 01:00:14 Europe/Lisbon] PHP Warning:  Missing argument 3 for get_video(), called in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 211 and defined in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 509
+[30-Dec-2016 01:03:07 Europe/Lisbon] PHP Warning:  Missing argument 3 for get_video(), called in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 211 and defined in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 509
+[30-Dec-2016 01:34:51 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 01:35:13 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 01:35:53 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 01:37:55 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 01:48:33 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 02:33:02 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[30-Dec-2016 21:51:12 Europe/Lisbon] PHP Warning:  rename(../../img/destaques/db/1483134667.jpg,../../img/deleted/1483134667.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 124
+[30-Dec-2016 21:59:43 Europe/Lisbon] PHP Warning:  rename(../../img/destaques/db/1483135179.jpg,../../img/deleted/1483135179.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 124
+[30-Dec-2016 22:56:19 Europe/Lisbon] PHP Warning:  rename(../../img/equipa/AO/main.jpg,../../videos/deleted/main.jpg): No such file or directory in /home/requilib/public_html/TST/Admin/php/adminDB.php on line 152
+[30-Dec-2016 23:03:32 Europe/Lisbon] PHP Warning:  fopen(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): failed to open stream: No such file or directory in /home/requilib/public_html/Admin/php/adminDB.php on line 191
+[30-Dec-2016 23:07:10 Europe/Lisbon] PHP Warning:  rename(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B,../../img/deleted/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): No such file or directory in /home/requilib/public_html/Admin/php/adminDB.php on line 124
+[30-Dec-2016 23:09:37 Europe/Lisbon] PHP Warning:  fopen(../../https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/15203184_1221381287932149_546476678957154558_n.jpg?oh=fde01c89e74e34c8b6ab3180ccd80fbd&amp;oe=58D5943B): failed to open stream: No such file or directory in /home/requilib/public_html/Admin/php/adminDB.php on line 191
+[30-Dec-2016 23:51:29 Europe/Lisbon] PHP Fatal error:  Cannot redeclare get_img() (previously declared in /home/requilib/public_html/Admin/php/adminDB.php:454) in /home/requilib/public_html/Admin/php/adminDB.php on line 525
+[30-Dec-2016 23:53:16 Europe/Lisbon] PHP Warning:  Missing argument 3 for get_img(), called in /home/requilib/public_html/Admin/php/adminDB.php on line 188 and defined in /home/requilib/public_html/Admin/php/adminDB.php on line 507
+[30-Dec-2016 23:56:35 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 122
+[30-Dec-2016 23:57:38 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 00:07:48 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 151
+[31-Dec-2016 00:12:27 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'get_video_by_id' (T_STRING), expecting '(' in /home/requilib/public_html/Admin/php/adminDB.php on line 447
+[31-Dec-2016 00:12:55 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/requilib/public_html/Admin/php/adminDB.php on line 453
+[31-Dec-2016 00:12:58 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/requilib/public_html/Admin/php/adminDB.php on line 453
+[31-Dec-2016 00:13:45 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 00:14:31 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 151
+[31-Dec-2016 00:16:03 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 122
+[31-Dec-2016 00:17:45 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 122
+[31-Dec-2016 00:31:56 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 123
+[31-Dec-2016 00:34:54 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 123
+[31-Dec-2016 00:40:12 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 123
+[31-Dec-2016 00:45:08 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 123
+[31-Dec-2016 00:45:47 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 123
+[31-Dec-2016 00:47:43 Europe/Lisbon] PHP Warning:  rename(../../,../../img/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 122
+[31-Dec-2016 00:52:58 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 00:53:48 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 00:55:58 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
+[31-Dec-2016 00:56:10 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
+[31-Dec-2016 00:57:02 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
+[31-Dec-2016 01:46:32 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 01:46:46 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
+[31-Dec-2016 01:52:08 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 01:53:12 Europe/Lisbon] PHP Fatal error:  Call to undefined function ´var_dump() in /home/requilib/public_html/Admin/php/adminDB.php on line 38
+[31-Dec-2016 01:53:39 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 153
+[31-Dec-2016 01:57:48 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 01:58:11 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
+[31-Dec-2016 02:02:14 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 02:21:02 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0

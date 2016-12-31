@@ -14,11 +14,17 @@
             <td>
                 <div class="page-collumn page-collumn-vcentered">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <img class="image-big" src="../img/equipa/groupPhoto.jpg" alt="foto de grupo">
+                        <button class="btn btn-success" ng-click="editFotos(equipa[allIndex].id)">
+                            Editar Fotos
+                        </button>
+                        <img class="image-big" ng-src=" {{ '../' + equipa[allIndex].img[0].path }}"> </img>
+                        <!--<img class="image-big" src="img/equipa/groupPhoto.jpg" alt="foto de grupo">-->
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <p class="text">
-                        Gabinete privádo de serviços de Fisioterapia e de Saúde. A área da Fisioterapia actua em em condições orto-traumatológicatras e em lesões desportivas, em problemas da coluna vertebral, em Pediatria e na Saúde da Mulher (preparação de pré-parto, pós-parto, incontinência urinária feminina e masculina), assim como na Geriatria (programas de prevenção de quedas e de mobilidade global), contando ainda com o serviço de Fisioterapia ao domícilio. Há ainda a colaboração com outros profissionais, Nutricionista, de modo a garantir aos utentes uma valência vasta e dirigida às suas necessidades específicas.       
+                        <button class="btn btn-warning" ng-click="saveFuncionario(equipa[allIndex])">
+							Gravar!
+                        </button>
+                        <p contenteditable  ng-model="equipa[allIndex].resumo" class="text contenteditable">
                         </p>
                     </div>    
                 </div>
@@ -32,14 +38,14 @@
                 <div class="row page-collumn equipa-nav">
                     <div ng-repeat-start="t in equipa" class="col-md-6 col-sm-12 col-xs-12 " ng-if="$index % 4 === 0" ng-init="group = equipa.slice($index, $index + 4)" ng-repeat-end>
                          <div class="row">
-                            <div ng-repeat="terapeuta in group" class="col-md-3 col-sm-3 col-xs-3" ng-show="terapeuta.equipa == 'ft'" ng-animate="custom">
+                            <div ng-repeat="terapeuta in group" class="col-md-3 col-sm-3 col-xs-3" ng-show="terapeuta.equipa == 'ft'" ng-animate="custom">      
                                 <img 
                                 class="img-circle imgSmall" 
                                 ng-class="{ 'hover': terapeuta.id == terapeutaHover, 'selected': terapeuta.id == terapeutaSelectedId }" 
                                 ng-click="changeTerapeuta($index, $parent.$index);" 
                                 ng-mouseover="hoverTerapeuta($index, $parent.$index);" 
                                 ng-mouseleave="undoHoverTerapeuta()" 
-                                ng-src="{{ terapeuta.mainImg[0].path }}">
+                                ng-src="{{ '../' + terapeuta.mainImg[0].path }}">
                                 </img>
 								<div contenteditable ng-model="terapeuta.nome" class="text-centered">
 								</div>
@@ -52,30 +58,16 @@
         <tr>
             <td>
                 <div class="row page-collumn" style="min-height:300px">
-                    <button ng-click="saveFuncionario(terapeutaMain)">
-                        Gravar!
+                    <button class="btn btn-warning" ng-click="saveFuncionario(terapeutaMain)">
+                        Gravar.
                     </button>
-                    <div class="col-xs-12 col-sm-12 col-md-8">
-                        <img src="../img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCV = true" ng-show="!fullCV"}}>        
-                        <img src="../img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCV = false"  ng-show="fullCV"}}>
-						<div contenteditable ng-model="terapeutaMain.nome" class='terapeutaMain-equipa contenteditable' ></div>
-                        <span ng-show="fullCV == false">
-                            <br>
-                            <span>
-                                <div contenteditable ng-model="terapeutaMain.resumo" class="text contenteditable"></div>
-                            </span>
-                        </span>
-                        <span ng-repeat="f in terapeutaMain.cv" class='itemcv-basico' ng-show="fullCV == true">
-                            <div contenteditable ng-model="f.field" class="cv-field contenteditable"></div>
-                            <div class="cv-content" ng-repeat="c in f.content" >
-                                <input ng-model="c"/>
-                            </div>  
-                        </span>
-                    </div>
+                    <button class="btn btn-primary" ng-click="editFotos(terapeutaMain.id)">
+                        Editar Fotos
+                    </button>
                     <div class="images col-xs-12 col-sm-12 col-md-4" ng-controller="PhotoSliderController">
                         <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage "
                              ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-                             ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.path}}" style="padding:0 auto">
+                             ng-hide="!isCurrentSlideIndex($index)" ng-src="{{'../' + slide.path}}" style="padding:0 auto">
                         <div class="arrow-container arrow-prev">
                             <img src="../assets/img/arrow-left.png" class="arrow arrow" ng-click="nextSlide()"></img>
                         </div>
@@ -93,6 +85,23 @@
                             </div>
                         </nav>
                     </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <img src="../img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCV = true" ng-show="!fullCV"}}>        
+                        <img src="../img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCV = false"  ng-show="fullCV"}}>
+						<div contenteditable ng-model="terapeutaMain.nome" class='terapeutaMain-equipa contenteditable' ></div>
+                        <span ng-show="fullCV == false">
+                            <br>
+                            <span>
+                                <div contenteditable ng-model="terapeutaMain.resumo" class="text contenteditable"></div>
+                            </span>
+                        </span>
+                        <span ng-repeat="f in terapeutaMain.cv" class='itemcv-basico' ng-show="fullCV == true">
+                            <div contenteditable ng-model="f.field" class="cv-field contenteditable"></div>
+                            <div class="cv-content" ng-repeat="c in f.content" >
+                                <input ng-model="c"/>
+                            </div>  
+                        </span>
+                    </div>
                 </div>
             </td> 
         </tr>
@@ -102,15 +111,34 @@
                     Nutricionista
                 </div>
                 <div class="row page-collumn" style="min-height:300px">
-                    <button ng-click="saveFuncionario(nutricionista)">
+                    <button class="btn btn-warning" ng-click="saveFuncionario(equipa[nutriIndex])">
                         Gravar!
                     </button>
-                    <div contenteditable ng-model="nutricionista.nome" class='col-xs-12 col-sm-12 col-md-4 itemcv-nome contenteditable' >
+                    <button class="btn btn-success" ng-click="editFotos(equipa[nutriIndex].id)">
+                        Editar Fotos
+                    </button>
+                    <div contenteditable ng-model="equipa[nutriIndex].nome" class='col-xs-12 col-sm-12 col-md-4 itemcv-nome contenteditable' >
+                    </div>                    
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <img src="../img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCVNutri = true" ng-show="!fullCVNutri"}}>    
+                        <img src="../img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCVNutri = false"  ng-show="fullCVNutri"}}>
+                        <span ng-show="fullCVNutri == false">
+                            <br>
+                            <span>
+                                <div contenteditable ng-model="equipa[nutriIndex].resumo" class="text contenteditable"></div>
+                            </span>
+                        </span>
+                        <span ng-repeat="f in equipa[nutriIndex].cv" class='itemcv-basico' ng-show="fullCVNutri == true">
+                            <div contenteditable ng-model="f.field" class="cv-field contenteditable"><strong></strong></div>
+                            <div class="cv-content" ng-repeat="c in f.content" >
+                                 <div contenteditable ng-model="c" class="contenteditable"></div>
+                            </div>  
+                        </span>
                     </div>
-                    <div id="nutri-fotos" class="images col-xs-12 col-sm-12 col-md-4" ng-controller="PhotoSliderController">
+					<div id="nutri-fotos" class="images col-xs-12 col-sm-12 col-md-4" ng-controller="PhotoSliderController">
                         <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage "
                              ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-                             ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.path}}" style="padding:0 auto">
+                             ng-hide="!isCurrentSlideIndex($index)" ng-src="{{'../' + slide.path}}" style="padding:0 auto">
                         <div class="arrow-container arrow-prev">
                             <img src="../assets/img/arrow-left.png" class="arrow arrow" ng-click="nextSlide()"></img>
                         </div>
@@ -128,22 +156,6 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8">
-                        <img src="../img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCVNutri = true" ng-show="!fullCVNutri"}}>    
-                        <img src="../img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCVNutri = false"  ng-show="fullCVNutri"}}>
-                        <span ng-show="fullCVNutri == false">
-                            <br>
-                            <span>
-                                <div contenteditable ng-model="nutricionista.resumo" class="text contenteditable"></div>
-                            </span>
-                        </span>
-                        <span ng-repeat="f in nutricionista.cv" class='itemcv-basico' ng-show="fullCVNutri == true">
-                            <div contenteditable ng-model="f.field" class="cv-field contenteditable"><strong></strong></div>
-                            <div class="cv-content" ng-repeat="c in f.content" >
-                                 <div contenteditable ng-model="c" class="contenteditable"></div>
-                            </div>  
-                        </span>
-                    </div>
                 </div>
             </td> 
         </tr>
@@ -152,22 +164,28 @@
                 <div class="subtitulo page-collumn">
                     Administrativas
                 </div>
-                div class="row page-collumn" style="min-height:300px">
+                <div class="row page-collumn" style="min-height:300px">
                     <div ng-repeat="admin in equipa" 
                          class="col-xs-12 col-sm-12 col-md-4 admin-container"
                          ng-show="admin.equipa == 'se'">
-                        <button ng-click="saveFuncionario(admin)">
+                        <button  class="btn btn-warning" ng-click="saveFuncionario(admin)">
                             Gravar!
                         </button>
                         <div contenteditable ng-model="admin.nome" class="itemcv-nome contenteditable">
                         </div>
                         <div contenteditable ng-model="admin.resumo" class="text contenteditable">
                         </div>
-						<img class="image-person itemcv-photo" ng-src="{{admin.img[0].path}}">
+                        <button  class="btn btn-success" ng-click="editFotos(admin.id)">
+							Editar Fotos
+                        </button>
+						<img class="image-person itemcv-photo" ng-src="{{'../' + admin.img[0].path}}">
                     </div>
                 </div>
             </td> 
         </tr>
     </table>
 </div>
+
+<edit-foto index="{{ selectedIndex }}" entity-list="equipa" entity="funcionario" ng-hide="selectedIndex == -1"/>
+
 

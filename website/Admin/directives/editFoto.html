@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="css/editFoto.css">
+<div class="conteudo-todo-shadow">
+    <div>
+        <a class="close" ng-click="close()"><img class="image-close" src="../img/icons/close.png" ></a>
+    </div>
+    <div class="conteudo-todo">
+        <div class="subtitulo col-md-12 col-sm-12 col-xs-12">
+            {{ entityList[index].nome }}
+			{{ entityList[index].titulo }}
+        </div>
+        <div ng-repeat="image in entityList[index].img" class="img-entry">
+			<table>
+				<tr>
+					<td style="width:300px;padding:20px;">
+						<img class="img-selected" ng-src="{{ '../' + image.path }}"></img>  			
+					</td>	
+					<td  style="width:400px;padding:20px;">
+						<table>
+							<tr>
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Descrição
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td>
+									<div contenteditable ng-model="image.descricao "class="contenteditable">
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Nome
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td>
+									<div  contenteditable ng-model="image.nome" class="contenteditable">
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Número na sequencia de fotos ordenada
+									</div>
+								</td>
+							</tr>
+							<tr style="margin-bottom:30px:">	
+								<td>
+									<div contenteditable ng-model="image.seq" class="contenteditable" ng-hide="image.seq == '0'">
+									</div>
+									<div  ng-show="image.seq == '0'">
+										{{image.seq}}
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Path
+									</div>
+								</td>
+							</tr>
+							<tr style="margin-bottom:30px:">	
+								<td>
+									<div>
+										{{image.path}}
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:400px">
+									<div>
+										<button  ng-click="saveFotoDetails($index)" class="rigth-button btn btn-warning">
+											Salvar detalhes
+										</button>
+										<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="saveLoading">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:200px;">
+		
+						<div class="file-upload">
+							Alterar Imagem
+							<input id="{{ 'file' + image.id}}" type="file" id="file" name="file"/>
+							<button  class="btn btn-warning" ng-click="changeFoto(image.id)">
+								Alterar imagem
+							</button>
+							<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="uploadLoading">
+						</div>
+					</td>
+					<td style="width:600px">
+						<div>
+						<button ng-click="deleteFoto(image.id)"  class="btn btn-danger rigth-button">
+							Eliminar Entrada
+						</button>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="deleteLoading">
+					</div>
+					</td>
+				</tr>
+			</table>
+        </div>
+        <button  class="btn btn-primary" ng-click="addFoto(index)">
+            Nova entrada para foto
+        </button>
+		<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="addLoading">
+		
+
+    <!--
+        <a class="arrow next" ng-click="showNext()"></a>
+        <a class="arrow previous" ng-click="showPrevious()"></a>
+    -->
+    </div>
+</div>

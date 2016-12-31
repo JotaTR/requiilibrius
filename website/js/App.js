@@ -43,6 +43,7 @@ App.directive('servicoQaTemplate', function () {
     };
 
 });
+
     
 App.directive('resizeSmallImg', function() {
     return function(scope, element, attrs) {
@@ -93,6 +94,23 @@ App.directive("contenteditable", function () {
         
     }
   });
+
+
+  
+App.directive('fileModel', ['$parse', function ($parse) {
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs) {
+			var model = $parse(attrs.fileModel);
+			var modelSetter = model.assign;
+			element.bind('change', function(){
+				scope.$apply(function(){
+					modelSetter(scope, element[0].files[0]);
+				});
+			});
+		}
+	};
+}]);
 
 App.filter("trustUrl", ['$sce', function ($sce) {
      return function (recordingUrl) {

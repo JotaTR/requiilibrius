@@ -1,0 +1,1 @@
+UPDATE requilib_website.img SET path = 'img/db/1483150725_funcionario_1.jpg' WHERE id = '49';

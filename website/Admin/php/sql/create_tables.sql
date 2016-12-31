@@ -79,6 +79,8 @@
 		id smallint AUTO_INCREMENT PRIMARY KEY,
 		path varchar(500),
 		nome varchar(50),
+		main boolean,
+		seq smallint,
 		descricao varchar(100),
 		entidade varchar(30),
 		entidade_id smallint
@@ -90,6 +92,7 @@
 		url varchar(1000),
 		type varchar(10),
 		nome varchar(100),
+		seq smallint,
 		descricao varchar(500),
 		entidade varchar(30),
 		entidade_id smallint

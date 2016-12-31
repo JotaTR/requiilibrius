@@ -13,11 +13,12 @@
             <td>
                 <div class="page-collumn page-collumn-vcentered">
                     <div class="col-md-6 col-sm-12 col-xs-12">
+                        <!--<img class="image-big" ng-src="{{ equipa[allIndex].img[0].path }}" alt="foto de grupo">-->
                         <img class="image-big" src="img/equipa/groupPhoto.jpg" alt="foto de grupo">
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <p class="text">
-                        Gabinete privádo de serviços de Fisioterapia e de Saúde. A área da Fisioterapia actua em em condições orto-traumatológicatras e em lesões desportivas, em problemas da coluna vertebral, em Pediatria e na Saúde da Mulher (preparação de pré-parto, pós-parto, incontinência urinária feminina e masculina), assim como na Geriatria (programas de prevenção de quedas e de mobilidade global), contando ainda com o serviço de Fisioterapia ao domícilio. Há ainda a colaboração com outros profissionais, Nutricionista, de modo a garantir aos utentes uma valência vasta e dirigida às suas necessidades específicas.       
+                            {{ equipa[allIndex].resumo }}
                         </p>
                     </div>    
                 </div>
@@ -52,23 +53,6 @@
         <tr>
             <td>
                 <div class="row page-collumn" style="min-height:300px">
-                    <div class="col-xs-12 col-sm-12 col-md-8">
-                        <img src="img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCV = true" ng-show="!fullCV"}}>        
-                        <img src="img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCV = false"  ng-show="fullCV"}}>
-						<div class='itemcv-nome' >{{ terapeutaMain.equipa | tituloFuncionario  }} {{ " " + terapeutaMain.nome }}</div>
-                        <span ng-show="fullCV == false">
-                            <br>
-                            <span>
-                                <div class="text" ng-bind-html="terapeutaMain.resumo | textFromDB"></div>
-                            </span>
-                        </span>
-                        <span ng-repeat="f in terapeutaMain.cv" class='itemcv-basico' ng-show="fullCV == true">
-                            <div class="cv-field"><strong>{{ f.field }}</strong></div>
-                            <ul class="cv-content" ng-repeat="c in f.content" >
-                                <li ng-bind-html="c">{{ c }}</li>
-                            </ul>  
-                        </span>
-                    </div>
                     <div class="images col-xs-12 col-sm-12 col-md-4" ng-controller="PhotoSliderController">
                         <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage image-person"
                              ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
@@ -90,6 +74,23 @@
                             </div>
                         </nav>
                     </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <img src="img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCV = true" ng-show="!fullCV"}}>        
+                        <img src="img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCV = false"  ng-show="fullCV"}}>
+						<div class='itemcv-nome' >{{ terapeutaMain.equipa | tituloFuncionario  }} {{ " " + terapeutaMain.nome }}</div>
+                        <span ng-show="fullCV == false">
+                            <br>
+                            <span>
+                                <div class="text" ng-bind-html="terapeutaMain.resumo | textFromDB"></div>
+                            </span>
+                        </span>
+                        <span ng-repeat="f in terapeutaMain.cv" class='itemcv-basico' ng-show="fullCV == true">
+                            <div class="cv-field"><strong>{{ f.field }}</strong></div>
+                            <ul class="cv-content" ng-repeat="c in f.content" >
+                                <li ng-bind-html="c">{{ c }}</li>
+                            </ul>  
+                        </span>
+                    </div>
                 </div>
             </td> 
         </tr>
@@ -100,11 +101,24 @@
                 </div>
                 <div class="row page-collumn" style="min-height:300px">
                     <div class='col-xs-12 col-sm-12 col-md-4 itemcv-nome' >
-                        {{ nutricionista.equipa | tituloFuncionario  }} {{ " " + nutricionista.nome }}
+                        {{ equipa[nutriIndex].equipa | tituloFuncionario  }} {{ " " + equipa[nutriIndex].nome }}
 <!--
                         <img src="img/icons/sabermais.png" class="sabermais-conteudo" ng-click="fullCVNutri = true" ng-show="!fullCVNutri"}}>    
                         <img src="img/icons/sabermenos.png" class="sabermais-conteudo" ng-click="fullCVNutri = false"  ng-show="fullCVNutri"}}>
 -->
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 section">
+                        <span ng-show="fullCVNutri == false">
+                            <span>
+                                <div class="text" ng-bind-html="equipa[nutriIndex].resumo | textFromDB"></div>
+                            </span>
+                        </span>
+                        <span ng-repeat="f in equipa[nutriIndex].cv" class='itemcv-basico' ng-show="fullCVNutri == true">
+                            <div class="cv-field"><strong>{{ f.field }}</strong></div>
+                            <ul class="cv-content" ng-repeat="c in f.content" >
+                                <li ng-bind-html="c"></li>
+                            </ul>  
+                        </span>
                     </div>
                     <div id="nutri-fotos" class="images col-xs-12 col-sm-12 col-md-4" ng-controller="PhotoSliderController">
                         <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage image-person"
@@ -126,19 +140,6 @@
                                 </div>
                             </div>
                         </nav>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-8 section">
-                        <span ng-show="fullCVNutri == false">
-                            <span>
-                                <div class="text" ng-bind-html="nutricionista.resumo | textFromDB"></div>
-                            </span>
-                        </span>
-                        <span ng-repeat="f in nutricionista.cv" class='itemcv-basico' ng-show="fullCVNutri == true">
-                            <div class="cv-field"><strong>{{ f.field }}</strong></div>
-                            <ul class="cv-content" ng-repeat="c in f.content" >
-                                <li ng-bind-html="c"></li>
-                            </ul>  
-                        </span>
                     </div>
                 </div>
             </td> 

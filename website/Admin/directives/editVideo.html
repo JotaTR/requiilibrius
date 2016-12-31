@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="css/editVideo.css">
+<div class="conteudo-todo-shadow">
+    <div>
+        <a class="close" ng-click="close()"><img class="image-close" src="../img/icons/close.png" ></a>
+    </div>
+    <div class="conteudo-todo">
+        <div class="subtitulo col-md-12 col-sm-12 col-xs-12">
+			{{ entityList[index].titulo }}
+        </div>
+        <div ng-repeat="vid in entityList[index].video" class="video-entry">
+			<table>
+				<tr>
+					<td style="width:500px;padding:20px;">
+						<iframe class="iframe video"
+							width="480" height="360" 
+							style="display:block;margin: 0 auto;"
+							ng-src="{{ vid.url | trustUrl}}">
+						</iframe>          
+					</td>	
+					<td  style="width:400px;padding:20px;">
+						<table>
+							<tr>
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Descrição
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td>
+									<div contenteditable ng-model="vid.descricao "class="contenteditable">
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Nome
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td>
+									<div  contenteditable ng-model="vid.nome" class="contenteditable">
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:300px;">
+									<div class="changeble-titulo">
+										Número na sequencia de fotos ordenada
+									</div>
+								</td>
+							</tr>
+							<tr style="margin-bottom:30px:">	
+								<td>
+									<div contenteditable ng-model="vid.seq" class="contenteditable">
+									</div>
+								</td>
+							</tr>
+							<tr>	
+								<td style="width:400px;">
+									<div class="changeble-titulo">
+										Url/Path
+									</div>
+								</td>
+							</tr>
+							<tr style="margin-bottom:30px:">	
+								<td>
+									<div>
+										{{vid.url}}
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:400px">
+									<div>
+										<button  ng-click="saveVideoDetails($index)" class="btn btn-primary rigth-button">
+											Salvar detalhes
+										</button>
+										<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="saveLoading">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:400px;">
+						<table>
+								<tr>
+									<td  style="width:300px" style="text">
+										Alterar Video
+									</td>
+								</tr>
+								<tr>
+									<td  style="width:300px">
+										Link ou File?<br>
+										<select style="width:300px" id="{{ 'selector' + vid.id}}" ng-model="videoType2Upload" ng-options="x for x in videoTypes"></select>
+									</td>
+								</tr>
+								<tr>
+									<td style="width:3000px">
+										<input style="width:300px" id="{{ 'file' + vid.id}}" type="file" name="file" ng-show="videoType2Upload == 'file'" />
+										<input style="width:300px" id="{{ 'link' + vid.id}}" type="text" name="link" ng-show="videoType2Upload == 'link'"/>
+									</td>
+								</tr>
+								<tr>
+									<td style="width:300px">
+										<button  class="btn btn-warning" ng-click="changeVideo(vid.id)" ng-show="( videoType2Upload == 'link' || videoType2Upload == 'file')" >
+											Alterar Video
+										</button>
+									</td>
+								</tr>
+							</table>
+					</td>
+					<td style="width:400px">
+						<div>
+						<button ng-click="deleteVideo(vid.id)"  class="btn btn-danger rigth-button">
+							Eliminar Entrada
+						</button>
+						<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="deleteLoading">
+					</div>
+					</td>
+				</tr>
+			</table>
+        </div>
+        <button  class="btn btn-primary" ng-click="addVideo(index)">
+            Nova entrada para Video
+        </button>
+		<img src="../assets/img/loading.gif" alt="Smiley face" height="30px" ng-show="addLoading">
+		<br>
+
+    <!--
+        <a class="arrow next" ng-click="showNext()"></a>
+        <a class="arrow previous" ng-click="showPrevious()"></a>
+    -->
+    </div>
+</div>
