@@ -1,3 +1,0 @@
-INSERT INTO requilib_website.video( url, nome, descricao, entidade, entidade_id, seq) VALUES ('', '...', '...', 'destaque', '2', 1000);DELETE FROM requilib_website.video WHERE id = '4';DELETE FROM requilib_website.img WHERE id = 48;INSERT INTO requilib_website.img( path, nome, descricao, entidade, entidade_id, seq) VALUES ('img/destaques/db/1483139232.jpg', '...', '...', 'destaque', '2', 1000);UPDATE requilib_website.img SET nome = '...', descricao = '...', seq = '0' WHERE id = '50' and path = 'img/destaques/db/1483139232.jpg';INSERT INTO requilib_website.destaque(
-						titulo, resumo, texto)
-						VALUES ('...', '...', '...');

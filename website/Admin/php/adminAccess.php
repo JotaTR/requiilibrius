@@ -21,7 +21,7 @@
 		$nome = $data['nome'];
 		$resumo = $data['resumo'];
 		$cv = $data['cv'];
-		update_funcionario($dbconn, $id, $nome, $resumo, $cv);
+		echo update_funcionario($dbconn, $id, $nome, $resumo, $cv);
 	}
 	
 	
@@ -34,16 +34,16 @@
 		$titulo = $data['titulo'];
 		$resumo = $data['resumo'];
 		$texto = $data['texto'];
-		update_destaque($dbconn, $id, $titulo, $resumo, $texto);
+		echo update_destaque($dbconn, $id, $titulo, $resumo, $texto);
 	}
 	elseif( $funcao == 'add_destaque' )
 	{
-		add_destaque($dbconn, $id, $titulo, $resumo, $texto);
+		echo add_destaque($dbconn, $id, $titulo, $resumo, $texto);
 	}
 	elseif( $funcao == 'delete_destaque' )
 	{
 		$id = $data['id'];
-		delete_destaque($dbconn, $id);
+		echo delete_destaque($dbconn, $id);
 	}
 	
 	
@@ -51,8 +51,7 @@
 	//BACKUPS
 	elseif( $funcao == 'backup_website' )
 	{
-		backup_website($dbconn, "");
-		echo true;
+		echo backup_website($dbconn, "");
 	}
 	elseif( $funcao == 'restore_website' )
 	{
@@ -100,25 +99,25 @@
 	elseif( $funcao == 'save_foto_details' )
 	{
         $img = $data['img'];
-		save_foto_details($dbconn, $img);
+		echo save_foto_details($dbconn, $img);
 	
     }elseif( $funcao == 'delete_foto' )
 	{
         $imgId = $data['imgId'];
-		delete_foto($dbconn, $imgId);
+		echo delete_foto($dbconn, $imgId);
 	
     }elseif( $funcao == 'add_foto' )
 	{
         $entidade_id = $data['entidade_id'];
         $entidade = $data['entidade'];
-		add_img_db($dbconn, $entidade, $entidade_id);
+		echo add_img_db($dbconn, $entidade, $entidade_id);
 	}
 	elseif( $funcao == 'change_foto' )
 	{
         $file = $_FILES['file'];
         $imagem_file = $data['file'];
         $imgId = $data['imgId'];
-		change_foto($dbconn, $imgId, $imagem_file);
+		echo change_foto($dbconn, $imgId, $imagem_file);
 	}
 	
 
@@ -128,25 +127,25 @@
 	elseif( $funcao == 'save_video_details' )
 	{
         $video = $data['video'];
-		save_video_details($dbconn, $video);
+		echo save_video_details($dbconn, $video);
 	
     }elseif( $funcao == 'delete_video' )
 	{
         $videoId = $data['videoId'];
-		delete_video($dbconn, $videoId);
+		echo delete_video($dbconn, $videoId);
 	
     }elseif( $funcao == 'add_video' )
 	{
         $entidade_id = $data['entidade_id'];
         $entidade = $data['entidade'];
-		add_video_db($dbconn, $entidade, $entidade_id);
+		echo add_video_db($dbconn, $entidade, $entidade_id);
 	}
 	elseif( $funcao == 'change_video' )
 	{
         $video_file = $data['file'];
         $videoId = $data['videoId'];
         $videType = $data['videoType'];
-		change_video($dbconn, $videoId, $video_file, $videType);
+		echo change_video($dbconn, $videoId, $video_file, $videType);
 	}
 	
 	

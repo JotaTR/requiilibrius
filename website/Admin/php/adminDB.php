@@ -38,13 +38,14 @@
 			delete_video($dbconn, $video[$i]['id']);
 		}
 		//Delete from DB
-		$query = "DELETE FROM requilib_website.destaque WHERE id = ".$id.";";
+		$query = "DELETE FROM requilib_website.destaque WHERE id = '".(mysql_real_escape_string($id))."' ;";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
 		if (!$query_response) {
-		 echo false;
+			echo "Error deleting destaque";
 		}else{
-			echo true;
+			audit($dbconn, $query, "DELETE", "destaque", $id);		
 		}
+		return true;
 	}
 	
 	function update_destaque($dbconn, $id, $titulo, $resumo, $texto){
@@ -55,8 +56,16 @@
 					  texto = '".(mysql_real_escape_string($texto))."'
 				WHERE id = '".mysql_real_escape_string($id)."';";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-		audit($dbconn, $query, "UPDATE", "destaque", $id);
-		echo true;
+		
+		if (!$query_response) 
+		{
+			echo "Error updating destaque";
+		}
+		else
+		{
+			audit($dbconn, $query, "UPDATE", "destaque", $id);
+		}
+		return true;
 	}
 	
 	function add_destaque($dbconn){
@@ -65,16 +74,19 @@
 		$resumo = "...";
 		$texto = "...";
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-		$query = "INSERT INTO requilib_website.destaque(
+		$query = "INSERT INTO requilib_website.destaque (
 						titulo, resumo, texto)
 						VALUES ('".(mysql_real_escape_string($titulo))."', '".(mysql_real_escape_string($resumo))."', '".(mysql_real_escape_string($texto))."');";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-		audit($dbconn, $query, "INSERT", "destaque", 999999);
-		if (!$query_response) {
-			echo false;
-		}else{
-			echo true;
+		if (!$query_response) 
+		{
+			echo "Error adding destaque";;
 		}
+		else
+		{
+			audit($dbconn, $query, "INSERT", "destaque", mysql_insert_id($dbconn));
+		}
+		return true;
 	}
 
 	
@@ -83,7 +95,11 @@
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 		$query = "UPDATE requilib_website.funcionario SET nome = '".mysql_real_escape_string($nome)."', resumo = '".mysql_real_escape_string($resumo)."' WHERE id = '".mysql_real_escape_string($id)."';";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());	
-		audit($dbconn, $query, "UPDATE", "funcionario", $id);		
+		if (!$query_response) {
+			echo "Error updating funcionario";
+		}else{
+			audit($dbconn, $query, "UPDATE", "funcionario", $id);	
+		}		
 		for($i = 0; $i < count($cvItemList); $i++ )
 		{
 			for($j = 0; $j < count($cvItemList[$i]['content']); $j++ )
@@ -97,10 +113,14 @@
 							funcionario_id = '".mysql_real_escape_string($id)."' 
 			and id = '".$cvItemList[$i]['id'][$j]."';";
 				$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-				audit($dbconn, $query, "UPDATE", "cvitem", $id);
+				if (!$query_response) {
+					echo "Error updatiog cvitem";
+				}else{
+					audit($dbconn, $query, "UPDATE", "cvitem", $id);
+				}
 			}
 		}
-		echo true;
+		return true;
 	}
 	
 	
@@ -122,13 +142,15 @@
 				rename('../../'.$path, '../../img/deleted/'.$filename);
 			}
 		}
-		if(get_img_seq($dbconn, $id) != '0')
+		if(!($img['path'] == "funcionario" and $img['seq'] == "0"))
 		{
 			delete_img_db($dbconn, $id);
 		}
 		else{
-			echo false;
+			return "Image cannot be deleted";
 		}
+		
+		return true;
 	}
     
     //video
@@ -154,26 +176,37 @@
 		}
 
         delete_video_db($dbconn, $id);
-        echo true;
+		return true;
     }
-	function delete_img_db($dbconn, $id){	
-		$query = "DELETE FROM requilib_website.img WHERE id = '".mysql_real_escape_string($id)."';";
+	
+	function delete_img_db($dbconn, $id)
+	{	
+		$query = "DELETE FROM requilib_website.img WHERE id = '".mysql_real_escape_string($id)."' ;";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-		if (!$query_response) {
-		 echo "\nErro a eliminar imagem da base de dados.<br>";
+		if (!$query_response) 
+		{
+			echo "\nErro a eliminar imagem.<br>";
 		}
-		audit($dbconn, $query, "DELETE", "img", $id);
+		else
+		{
+			audit($dbconn, $query, "DELETE", "img", $id);
+		}
+		return true;
 	}
 
 	function delete_video_db($dbconn, $id)
 	{		
-		$query = "DELETE FROM requilib_website.video WHERE id = '".mysql_real_escape_string($id)."';";
-		audit($dbconn, $query, "DELETE", "video", $id);
+		$query = "DELETE FROM requilib_website.video WHERE id = '".mysql_real_escape_string($id)."' ;";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
 		if (!$query_response)
 		{
 		 echo "\nErro a eliminar video da base de dados.<br>";
 		}
+		else
+		{
+			audit($dbconn, $query, "DELETE", "video", $id);
+		}
+		return true;
 	}
 	
     function change_foto($dbconn, $imgId, $file_data)
@@ -211,10 +244,17 @@
 		//Upate ao path se o nome do ficheiro mudar
        //alterar path na DB
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-        $query = "UPDATE requilib_website.img SET path = '".mysql_real_escape_string($path)."' WHERE id = '".mysql_real_escape_string($imgId)."';";
-		$query_response = mysql_query($query, $dbconn) or die(mysql_error());	
-		audit($dbconn, $query, "UPDATE", "img", $imgId);		
-		echo true;
+        $query = "UPDATE requilib_website.img SET path = '".mysql_real_escape_string($path)."' WHERE id = '".mysql_real_escape_string($imgId)." ';";
+		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
+		if (!$query_response)
+		{
+		 echo "\nErro a alterar URL do video";
+		}
+		else
+		{
+			audit($dbconn, $query, "UPDATE", "img", $imgId);		
+		}
+		return true;
 	}
 	
     function change_video($dbconn, $videoId, $file_data, $type)
@@ -269,9 +309,16 @@
 		mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
         $query = "UPDATE requilib_website.video SET url = '".mysql_real_escape_string($url)."', type = '".$type."' WHERE id = '".mysql_real_escape_string($videoId)."';";
 		
-		$query_response = mysql_query($query, $dbconn) or die(mysql_error());	
-		audit($dbconn, $query, "UPDATE", "video", $videoId);		
-		echo true;
+		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
+		if (!$query_response)
+		{
+		 echo "Erro a atualizar video da base de dados.";
+		}
+		else
+		{
+			audit($dbconn, $query, "UPDATE", "video", $videoId);		
+		}
+		return true;
 	}
 	
 	
@@ -280,10 +327,17 @@
         //Upate
         mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 		
-		$query = "UPDATE requilib_website.img SET nome = '".mysql_real_escape_string($img['nome'])."', descricao = '".mysql_real_escape_string($img['descricao'])."', seq = '".$img['seq']."' WHERE id = '".$img['id']."' and path = '".mysql_real_escape_string($img['path'])."';";
+		$query = "UPDATE requilib_website.img SET nome = '".mysql_real_escape_string($img['nome'])."', descricao = '".mysql_real_escape_string($img['descricao'])."', seq = '".$img['seq']."' WHERE id = '".$img['id']."';";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-		audit($dbconn, $query, "UPDATE", "img", $img['id']);
-		echo true;		
+		if (!$query_response)
+		{
+		 echo "\nErro a atualizar detalhes da foto.<br>";
+		}
+		else
+		{
+			audit($dbconn, $query, "UPDATE", "img", $img['id']);
+		}	
+		return true;
     }
     
     function save_video_details($dbconn, $video)
@@ -293,8 +347,15 @@
 		
 		$query = "UPDATE requilib_website.video SET nome = '".mysql_real_escape_string($video['nome'])."', descricao = '".mysql_real_escape_string($video['descricao'])."', seq = '".$video['seq']."' WHERE id = '".$video['id']."';";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
-		audit($dbconn, $query, "UPDATE", "video", $video['id']);
-		echo true;		
+		if (!$query_response)
+		{
+		 echo "\nErro a atualizar detalhes do video.<br>";
+		}
+		else
+		{
+			audit($dbconn, $query, "UPDATE", "video", $video['id']);
+		}	
+		return true;
     }
     
     
@@ -310,9 +371,17 @@
 		$descricao="...";
 		
         //Insert na BD
-        $query = "INSERT INTO requilib_website.img( path, nome, descricao, entidade, entidade_id, seq) VALUES ('".$path."', '".$nome."', '".$descricao."', '".mysql_real_escape_string($entidade)."', '".mysql_real_escape_string($entidade_id)."', 1000);";
-		audit($dbconn, $query, "INSERT", "img", $entidade_id);
+        $query = "INSERT INTO requilib_website.img ( path, nome, descricao, entidade, entidade_id, seq) VALUES ('".$path."', '".$nome."', '".$descricao."', '".mysql_real_escape_string($entidade)."', '".mysql_real_escape_string($entidade_id)."', 1000);";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
+		if (!$query_response)
+		{
+		 echo "\nErro a inserir imagem.<br>";
+		}
+		else
+		{
+			audit($dbconn, $query, "INSERT", "img",  mysql_insert_id($dbconn));
+		}	
+		return true;
 	}
     
 	
@@ -324,9 +393,17 @@
 		$descricao="...";
 		$url="";
         //Insert na BD
-        $query = "INSERT INTO requilib_website.video( url, nome, descricao, entidade, entidade_id, seq) VALUES ('".$url."', '".$nome."', '".$descricao."', '".mysql_real_escape_string($entidade)."', '".mysql_real_escape_string($entidade_id)."', 1000);";
-		audit($dbconn, $query, "INSERT", "video", $entidade_id);
+        $query = "INSERT INTO requilib_website.video ( url, nome, descricao, entidade, entidade_id, seq) VALUES ('".$url."', '".$nome."', '".$descricao."', '".mysql_real_escape_string($entidade)."', '".mysql_real_escape_string($entidade_id)."', 1000);";
 		$query_response = mysql_query($query, $dbconn) or die(mysql_error());
+		if (!$query_response)
+		{
+			echo "\nErro a inserir imagem.<br>";
+		}
+		else
+		{
+			audit($dbconn, $query, "INSERT", "video", mysql_insert_id($dbconn));
+		}	
+		return true;
 	}
     
     	//BACKUPS
@@ -363,9 +440,10 @@
 		{
 			unlink($file_path);//elimina ficheiro
 		}
+		return true;
 	}
 	
-	function exec_sql_file($dbconn, $file_path, $onsite)
+	function exec_sql_file($dbconn, $file_path, $setUTF)
 	{
 		$dbms_schema = $file_path;
 		$sql_query = @fread(@fopen($dbms_schema, 'r'), @filesize($dbms_schema)) or die('problem opening file');
@@ -375,12 +453,80 @@
 		foreach($sql_query as $sql)
 		{
 			//echo utf8_encode($sql);
-			if($onsite)
+			if($setUTF)
 			{
 				mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-				//audit($dbconn, $sql, '?', '?', -1);
+				
+				//Retirar dados para AUDIT
+				$sql2 = $sql;
+				$action = strtok($sql2, " ");
+				preg_match('~requilib_website.(.*?) ~', $sql, $output1);
+				preg_match('~ id = \'(.*?)\'~',$sql, $output2);
+				$entidade = $output1[1];
+				$entidade_id = $output2[1];
+				if($entidade_id == "")
+				{
+					preg_match('~ id = \'(.*?)\'~',$sql, $output2);
+					$entidade_id = $output2[1];
+					if($entidade_id == "")
+					{
+						$entidade_id = -1;
+					}
+				}
+				/*«
+				echo "<br>".$sql;
+				echo "<br>".$action;
+				echo "<br>".$entidade ;
+				echo "<br>".$entidade_id;
+				echo "<br>*****************************************";
+				*/
+				audit($dbconn, $sql.";", $action, $entidade, $entidade_id);
+				
 			}
 			mysql_query($sql, $dbconn) or die(mysql_error());
+		}
+		
+		//Move deleted images back to previous path
+		if($setUTF)
+		{
+			//get all audit in DB that updated video/img path
+			$query =   "SELECT id, query_date, entidade, entidade_id, action, query
+						FROM requilib_website.audit main
+						WHERE 1=1
+						AND main.entidade in ('img', 'video') 
+						AND main.action = 'UPDATE' 
+						AND main.query like 'UPDATE requilib_website.img SET path = %' 
+						AND main.id = (SELECT max(tb1.id)
+												from requilib_website.audit tb1 
+												where 1=1
+												AND tb1.entidade in ('img', 'video') 
+												AND tb1.action = 'UPDATE' 
+												AND tb1.query like 'UPDATE requilib_website.img SET path = %' 
+												AND tb1.entidade_id = main.entidade_id)
+						AND NOT EXISTS (SELECT 1 
+										from requilib_website.audit tb2 
+										where tb2.entidade_id = main.entidade_id 
+										AND main.action = 'DELETE'
+										AND tb2.query_date > main.query_date )
+						ORDER by main.query_date ASC;";
+			$query_response =  mysql_query($query, $dbconn) or die(mysql_error());
+			$counter = 0;
+			$actions = [];
+			while($row=  mysql_fetch_array($query_response))
+			{
+				preg_match('~path = \'(.*?)\'~', $row['query'], $output);
+				$file_path = $output[1];
+				if( !file_exists ( "../../".$file_path ))
+				{
+					//echo "<br> file desnt existst in path: ".$file_path;
+					$filename = get_filename_from_path($file_path);
+					if( file_exists ( "../../img/deleted/".$filename ))
+					{
+						//echo "<br> moving file from "."../../img/deleted/".$filename." to "."../../".$file_path."";
+						rename("../../img/deleted/".$filename, "../../".$file_path );
+					}					
+				}				
+			}
 		}
 	}
 	
@@ -400,7 +546,6 @@
 			$files_to_send[$i - 3]['date'] = filectime( $date );
 		}		
 		echo json_encode(utf8ize($files_to_send));
-		return $files_to_send;
 	}
 	
 	function delete_backup($filename){
@@ -496,6 +641,7 @@
 	{
 		$ext = get_file_ext($filename);
 		$filename = preg_replace('"\.$ext$"', $new_ext, $filename);
+		return $ext;
 	}
 	
 	function get_img($dbconn, $entidade, $entidade_id)
@@ -548,7 +694,7 @@
 		{
 			mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
 		}
-		$query = "INSERT INTO requilib_website.audit(
+		$query = "INSERT INTO requilib_website.audit (
 							query_date, entidade, entidade_id, action, query)
 						VALUES (NOW(), '".mysql_real_escape_string($entidade)."', '".mysql_real_escape_string($id)."', '".$action."', '".(mysql_real_escape_string($query_to_store))."');";
 		
@@ -563,17 +709,19 @@
 	}
 
 
-
-
-    
-	function utf8ize($d) {
-	 if (is_array($d)) {
-	 foreach ($d as $k => $v) {
-	 $d[$k] = utf8ize($v);
-	 }
-	 } else if (is_string ($d)) {
-	 return utf8_encode($d);
-	 }
-	 return $d;
+	function utf8ize($d) 
+	{
+		if (is_array($d)) 
+		{
+			foreach ($d as $k => $v) 
+			{
+				$d[$k] = utf8ize($v);
+			}
+		}  
+		else if (is_string ($d)) 
+		{
+			return utf8_encode($d);
+		}
+		return $d;
 	}
 ?>

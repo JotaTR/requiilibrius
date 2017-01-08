@@ -149,3 +149,7 @@
 [31-Dec-2016 01:58:11 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 152
 [31-Dec-2016 02:02:14 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
 [31-Dec-2016 02:21:02 Europe/Lisbon] PHP Warning:  Unknown: Input variables exceeded 10000. To increase the limit change max_input_vars in php.ini. in Unknown on line 0
+[31-Dec-2016 14:59:22 Europe/Lisbon] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/requilib/public_html/Admin/php/adminDB.php on line 62
+[31-Dec-2016 14:59:55 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '}' in /home/requilib/public_html/Admin/php/adminDB.php on line 90
+[06-Jan-2017 18:19:08 Europe/Lisbon] PHP Warning:  rename(../../,../../videos/deleted/): Device or resource busy in /home/requilib/public_html/Admin/php/adminDB.php on line 174
+[07-Jan-2017 19:03:11 Europe/Lisbon] PHP Warning:  preg_match(): No ending delimiter '~' found in /home/requilib/public_html/Admin/php/adminDB.php on line 466

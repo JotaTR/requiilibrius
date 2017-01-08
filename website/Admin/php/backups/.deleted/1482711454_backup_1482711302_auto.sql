@@ -1,1 +1,0 @@
-INSERT INTO requilib_website.img( path, nome, descricao, entidade, entidade_id, seq) VALUES ('img/equipa/db/1482711066.jpg', '...', '...', 'funcionario', '1', 1000);

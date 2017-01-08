@@ -1,1 +1,0 @@
-DELETE FROM requilib_website.img WHERE id = 28;

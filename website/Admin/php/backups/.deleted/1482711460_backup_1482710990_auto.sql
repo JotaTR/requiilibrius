@@ -1,1 +1,0 @@
-UPDATE requilib_website.img SET nome = 'DP', descricao = '1', seq = '0' WHERE id = '13' and path = 'img/equipa/DP/1.jpg';DELETE FROM requilib_website.img WHERE id = 49;INSERT INTO requilib_website.img( path, nome, descricao, entidade, entidade_id, seq) VALUES ('img/equipa/db/1482710524.jpg', '...', '...', 'funcionario', '1', 1000);

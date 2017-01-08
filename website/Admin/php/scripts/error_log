@@ -16,3 +16,4 @@
 [19-Dec-2016 00:32:13 Europe/Lisbon] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in /home/requilib/public_html/Admin/php/adminDB.php on line 326
 [19-Dec-2016 21:09:46 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$dir' (T_VARIABLE) in /home/requilib/public_html/Admin/php/adminDB.php on line 277
 [19-Dec-2016 21:09:49 Europe/Lisbon] PHP Parse error:  syntax error, unexpected '$dir' (T_VARIABLE) in /home/requilib/public_html/Admin/php/adminDB.php on line 277
+[31-Dec-2016 14:31:05 Europe/Lisbon] PHP Fatal error:  Call to undefined function php_info() in /home/requilib/public_html/Admin/php/scripts/php_info.php on line 2
